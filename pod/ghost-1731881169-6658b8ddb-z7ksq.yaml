@@ -1,0 +1,389 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: '2024-11-17T22:06:12+00:00'
+  generateName: ghost-1731881169-6658b8ddb-
+  labels:
+    app: ghost-1731881169
+    chart: ghost-9.1.13
+    pod-template-hash: 6658b8ddb
+    release: ghost-1731881169
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:generateName: {}
+        f:labels:
+          .: {}
+          f:app: {}
+          f:chart: {}
+          f:pod-template-hash: {}
+          f:release: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"1eed141d-7d6b-4e90-9fa6-24d7c9058d2b"}: {}
+      f:spec:
+        f:containers:
+          k:{"name":"ghost-1731881169"}:
+            .: {}
+            f:env:
+              .: {}
+              k:{"name":"ALLOW_EMPTY_PASSWORD"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"BLOG_TITLE"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"GHOST_DATABASE_NAME"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"GHOST_DATABASE_PASSWORD"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:secretKeyRef: {}
+              k:{"name":"GHOST_DATABASE_USER"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"GHOST_EMAIL"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"GHOST_HOST"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"GHOST_PASSWORD"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:secretKeyRef: {}
+              k:{"name":"GHOST_PORT_NUMBER"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"GHOST_PROTOCOL"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"GHOST_USERNAME"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"MARIADB_HOST"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"MARIADB_PORT_NUMBER"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:livenessProbe:
+              .: {}
+              f:failureThreshold: {}
+              f:httpGet:
+                .: {}
+                f:httpHeaders: {}
+                f:path: {}
+                f:port: {}
+                f:scheme: {}
+              f:initialDelaySeconds: {}
+              f:periodSeconds: {}
+              f:successThreshold: {}
+              f:timeoutSeconds: {}
+            f:name: {}
+            f:ports:
+              .: {}
+              k:{"containerPort":2368,"protocol":"TCP"}:
+                .: {}
+                f:containerPort: {}
+                f:name: {}
+                f:protocol: {}
+            f:readinessProbe:
+              .: {}
+              f:failureThreshold: {}
+              f:httpGet:
+                .: {}
+                f:httpHeaders: {}
+                f:path: {}
+                f:port: {}
+                f:scheme: {}
+              f:initialDelaySeconds: {}
+              f:periodSeconds: {}
+              f:successThreshold: {}
+              f:timeoutSeconds: {}
+            f:resources:
+              .: {}
+              f:requests:
+                .: {}
+                f:cpu: {}
+                f:memory: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+            f:volumeMounts:
+              .: {}
+              k:{"mountPath":"/bitnami/ghost"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+        f:dnsPolicy: {}
+        f:enableServiceLinks: {}
+        f:restartPolicy: {}
+        f:schedulerName: {}
+        f:securityContext:
+          .: {}
+          f:fsGroup: {}
+          f:runAsUser: {}
+        f:terminationGracePeriodSeconds: {}
+        f:volumes:
+          .: {}
+          k:{"name":"ghost-data"}:
+            .: {}
+            f:name: {}
+            f:persistentVolumeClaim:
+              .: {}
+              f:claimName: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: '2024-11-17T22:06:12+00:00'
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"ContainersReady"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Initialized"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"PodReadyToStartContainers"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Ready"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+        f:containerStatuses: {}
+        f:hostIP: {}
+        f:hostIPs: {}
+        f:phase: {}
+        f:podIP: {}
+        f:podIPs:
+          .: {}
+          k:{"ip":"10.1.0.123"}:
+            .: {}
+            f:ip: {}
+        f:startTime: {}
+    manager: kubelet
+    operation: Update
+    subresource: status
+    time: '2024-11-22T05:46:24+00:00'
+  name: ghost-1731881169-6658b8ddb-z7ksq
+  namespace: default
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: ghost-1731881169-6658b8ddb
+    uid: 1eed141d-7d6b-4e90-9fa6-24d7c9058d2b
+  resourceVersion: '406408'
+  uid: 3b191612-b11b-4670-9481-ecca84af9e1b
+spec:
+  containers:
+  - env:
+    - name: ALLOW_EMPTY_PASSWORD
+      value: 'yes'
+    - name: MARIADB_HOST
+      value: ghost-1731881169-mariadb
+    - name: MARIADB_PORT_NUMBER
+      value: '3306'
+    - name: GHOST_DATABASE_NAME
+      value: bitnami_ghost
+    - name: GHOST_DATABASE_USER
+      value: bn_ghost
+    - name: GHOST_DATABASE_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          key: mariadb-password
+          name: ghost-1731881169-mariadb
+    - name: GHOST_HOST
+      value: ghost.example.com/
+    - name: GHOST_PROTOCOL
+      value: http
+    - name: GHOST_PORT_NUMBER
+      value: '80'
+    - name: GHOST_USERNAME
+      value: admin
+    - name: GHOST_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          key: ghost-password
+          name: ghost-1731881169
+    - name: GHOST_EMAIL
+      value: email@example.com
+    - name: BLOG_TITLE
+      value: User's Blog
+    image: docker.io/bitnami/ghost:3.9.0-debian-10-r0
+    imagePullPolicy: IfNotPresent
+    livenessProbe:
+      failureThreshold: 6
+      httpGet:
+        httpHeaders:
+        - name: Host
+          value: ghost.example.com/
+        path: /
+        port: http
+        scheme: HTTP
+      initialDelaySeconds: 120
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 5
+    name: ghost-1731881169
+    ports:
+    - containerPort: 2368
+      name: http
+      protocol: TCP
+    readinessProbe:
+      failureThreshold: 6
+      httpGet:
+        httpHeaders:
+        - name: Host
+          value: ghost.example.com/
+        path: /
+        port: http
+        scheme: HTTP
+      initialDelaySeconds: 30
+      periodSeconds: 5
+      successThreshold: 1
+      timeoutSeconds: 3
+    resources:
+      requests:
+        cpu: 300m
+        memory: 512Mi
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /bitnami/ghost
+      name: ghost-data
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-b9pwh
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: docker-desktop
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    fsGroup: 1001
+    runAsUser: 1001
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: ghost-data
+    persistentVolumeClaim:
+      claimName: ghost-1731881169
+  - name: kube-api-access-b9pwh
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+status:
+  conditions:
+  - lastTransitionTime: '2024-11-17T22:07:14+00:00'
+    status: 'True'
+    type: PodReadyToStartContainers
+  - lastTransitionTime: '2024-11-17T22:06:12+00:00'
+    status: 'True'
+    type: Initialized
+  - lastTransitionTime: '2024-11-17T22:06:12+00:00'
+    message: 'containers with unready status: [ghost-1731881169]'
+    reason: ContainersNotReady
+    status: 'False'
+    type: Ready
+  - lastTransitionTime: '2024-11-17T22:06:12+00:00'
+    message: 'containers with unready status: [ghost-1731881169]'
+    reason: ContainersNotReady
+    status: 'False'
+    type: ContainersReady
+  - lastTransitionTime: '2024-11-17T22:06:12+00:00'
+    status: 'True'
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://2fa5e317fe396400d25d5c98ff2b99ba5cf6e61de3811bd89bf6907e10cf4f94
+    image: bitnami/ghost:3.9.0-debian-10-r0
+    imageID: docker-pullable://bitnami/ghost@sha256:0d04f8bd5f9bd57e44b8e1d55c181175046760b233cdf150fa8bc207b492e721
+    lastState:
+      terminated:
+        containerID: docker://2fa5e317fe396400d25d5c98ff2b99ba5cf6e61de3811bd89bf6907e10cf4f94
+        exitCode: 143
+        finishedAt: '2024-11-22T05:46:23+00:00'
+        reason: Error
+        startedAt: '2024-11-22T05:43:33+00:00'
+    name: ghost-1731881169
+    ready: false
+    restartCount: 826
+    started: false
+    state:
+      waiting:
+        message: back-off 5m0s restarting failed container=ghost-1731881169 pod=ghost-1731881169-6658b8ddb-z7ksq_default(3b191612-b11b-4670-9481-ecca84af9e1b)
+        reason: CrashLoopBackOff
+  hostIP: 192.168.65.3
+  hostIPs:
+  - ip: 192.168.65.3
+  phase: Running
+  podIP: 10.1.0.123
+  podIPs:
+  - ip: 10.1.0.123
+  qosClass: Burstable
+  startTime: '2024-11-17T22:06:12+00:00'
