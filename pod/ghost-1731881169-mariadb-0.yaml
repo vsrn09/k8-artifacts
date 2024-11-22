@@ -1,0 +1,388 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: '{"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"creationTimestamp":"2024-11-17T22:06:12+00:00","generateName":"ghost-1731881169-mariadb-","labels":{"app":"mariadb","apps.kubernetes.io/pod-index":"0","chart":"mariadb-7.3.12","component":"master","controller-revision-hash":"ghost-1731881169-mariadb-5fbd6b5b9","release":"ghost-1731881169","statefulset.kubernetes.io/pod-name":"ghost-1731881169-mariadb-0"},"managedFields":[{"apiVersion":"v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:generateName":{},"f:labels":{".":{},"f:app":{},"f:apps.kubernetes.io/pod-index":{},"f:chart":{},"f:component":{},"f:controller-revision-hash":{},"f:release":{},"f:statefulset.kubernetes.io/pod-name":{}},"f:ownerReferences":{".":{},"k:{\"uid\":\"31abfae8-84d8-411d-bdab-8daee30e9e6e\"}":{}}},"f:spec":{"f:affinity":{".":{},"f:podAntiAffinity":{".":{},"f:preferredDuringSchedulingIgnoredDuringExecution":{}}},"f:containers":{"k:{\"name\":\"mariadb\"}":{".":{},"f:env":{".":{},"k:{\"name\":\"MARIADBDatabase\"}":{".":{},"f:name":{},"f:value":{}},"k:{\"name\":\"MARIADBPassword\"}":{".":{},"f:name":{},"f:valueFrom":{".":{},"f:secretKeyRef":{}}},"k:{\"name\":\"MARIADBRootPassword\"}":{".":{},"f:name":{},"f:valueFrom":{".":{},"f:secretKeyRef":{}}},"k:{\"name\":\"MARIADBUser\"}":{".":{},"f:name":{},"f:value":{}}},"f:image":{},"f:imagePullPolicy":{},"f:livenessProbe":{".":{},"f:exec":{".":{},"f:command":{}},"f:failureThreshold":{},"f:initialDelaySeconds":{},"f:periodSeconds":{},"f:successThreshold":{},"f:timeoutSeconds":{}},"f:name":{},"f:ports":{".":{},"k:{\"containerPort\":3306,\"protocol\":\"TCP\"}":{".":{},"f:containerPort":{},"f:name":{},"f:protocol":{}}},"f:readinessProbe":{".":{},"f:exec":{".":{},"f:command":{}},"f:failureThreshold":{},"f:initialDelaySeconds":{},"f:periodSeconds":{},"f:successThreshold":{},"f:timeoutSeconds":{}},"f:resources":{},"f:terminationMessagePath":{},"f:terminationMessagePolicy":{},"f:volumeMounts":{".":{},"k:{\"mountPath\":\"/bitnami/mariadb\"}":{".":{},"f:mountPath":{},"f:name":{}},"k:{\"mountPath\":\"/opt/bitnami/mariadb/conf/my.cnf\"}":{".":{},"f:mountPath":{},"f:name":{},"f:subPath":{}}}}},"f:dnsPolicy":{},"f:enableServiceLinks":{},"f:hostname":{},"f:restartPolicy":{},"f:schedulerName":{},"f:securityContext":{".":{},"f:fsGroup":{},"f:runAsUser":{}},"f:serviceAccount":{},"f:serviceAccountName":{},"f:subdomain":{},"f:terminationGracePeriodSeconds":{},"f:volumes":{".":{},"k:{\"name\":\"config\"}":{".":{},"f:configMap":{".":{},"f:defaultMode":{},"f:name":{}},"f:name":{}},"k:{\"name\":\"data\"}":{".":{},"f:name":{},"f:persistentVolumeClaim":{".":{},"f:claimName":{}}}}}},"manager":"kube-controller-manager","operation":"Update","time":"2024-11-17T22:06:12+00:00"},{"apiVersion":"v1","fieldsType":"FieldsV1","fieldsV1":{"f:status":{"f:conditions":{".":{},"k:{\"type\":\"PodScheduled\"}":{".":{},"f:lastProbeTime":{},"f:lastTransitionTime":{},"f:message":{},"f:reason":{},"f:status":{},"f:type":{}}}}},"manager":"kube-scheduler","operation":"Update","subresource":"status","time":"2024-11-17T22:06:12+00:00"},{"apiVersion":"v1","fieldsType":"FieldsV1","fieldsV1":{"f:status":{"f:conditions":{"k:{\"type\":\"ContainersReady\"}":{".":{},"f:lastProbeTime":{},"f:lastTransitionTime":{},"f:status":{},"f:type":{}},"k:{\"type\":\"Initialized\"}":{".":{},"f:lastProbeTime":{},"f:lastTransitionTime":{},"f:status":{},"f:type":{}},"k:{\"type\":\"PodReadyToStartContainers\"}":{".":{},"f:lastProbeTime":{},"f:lastTransitionTime":{},"f:status":{},"f:type":{}},"k:{\"type\":\"Ready\"}":{".":{},"f:lastProbeTime":{},"f:lastTransitionTime":{},"f:status":{},"f:type":{}}},"f:containerStatuses":{},"f:hostIP":{},"f:hostIPs":{},"f:phase":{},"f:podIP":{},"f:podIPs":{".":{},"k:{\"ip\":\"10.1.0.122\"}":{".":{},"f:ip":{}}},"f:startTime":{}}},"manager":"kubelet","operation":"Update","subresource":"status","time":"2024-11-17T22:07:01+00:00"}],"name":"ghost-1731881169-mariadb-0","namespace":"default","ownerReferences":[{"apiVersion":"apps/v1","blockOwnerDeletion":true,"controller":true,"kind":"StatefulSet","name":"ghost-1731881169-mariadb","uid":"31abfae8-84d8-411d-bdab-8daee30e9e6e"}],"resourceVersion":"46174","uid":"217ff106-0c4c-435d-bfed-275e063d6050"},"spec":{"affinity":{"podAntiAffinity":{"preferredDuringSchedulingIgnoredDuringExecution":[{"podAffinityTerm":{"labelSelector":{"matchLabels":{"app":"mariadb","release":"ghost-1731881169"}},"topologyKey":"kubernetes.io/hostname"},"weight":1}]}},"containers":[{"env":[{"name":"MARIADB_ROOT_PASSWORD","valueFrom":{"secretKeyRef":{"key":"mariadb-root-password","name":"ghost-1731881169-mariadb"}}},{"name":"MARIADB_USER","value":"bn_ghost"},{"name":"MARIADB_PASSWORD","valueFrom":{"secretKeyRef":{"key":"mariadb-password","name":"ghost-1731881169-mariadb"}}},{"name":"MARIADB_DATABASE","value":"bitnami_ghost"}],"image":"docker.io/bitnami/mariadb:10.3.22-debian-10-r27","imagePullPolicy":"IfNotPresent","livenessProbe":{"exec":{"command":["sh","-c","password_aux=\"${MARIADB_ROOT_PASSWORD:-}\"\nif
+      [ -f \"${MARIADB_ROOT_PASSWORD_FILE:-}\" ]; then\n    password_aux=$(cat $MARIADB_ROOT_PASSWORD_FILE)\nfi\nmysqladmin
+      status -uroot -p$password_aux\n"]},"failureThreshold":3,"initialDelaySeconds":120,"periodSeconds":10,"successThreshold":1,"timeoutSeconds":1},"name":"mariadb","ports":[{"containerPort":3306,"name":"mysql","protocol":"TCP"}],"readinessProbe":{"exec":{"command":["sh","-c","password_aux=\"${MARIADB_ROOT_PASSWORD:-}\"\nif
+      [ -f \"${MARIADB_ROOT_PASSWORD_FILE:-}\" ]; then\n    password_aux=$(cat $MARIADB_ROOT_PASSWORD_FILE)\nfi\nmysqladmin
+      status -uroot -p$password_aux\n"]},"failureThreshold":3,"initialDelaySeconds":30,"periodSeconds":10,"successThreshold":1,"timeoutSeconds":1},"resources":{},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File","volumeMounts":[{"mountPath":"/bitnami/mariadb","name":"data"},{"mountPath":"/opt/bitnami/mariadb/conf/my.cnf","name":"config","subPath":"my.cnf"},{"mountPath":"/var/run/secrets/kubernetes.io/serviceaccount","name":"kube-api-access-g7ksp","readOnly":true}]}],"dnsPolicy":"ClusterFirst","enableServiceLinks":true,"hostname":"ghost-1731881169-mariadb-0","nodeName":"docker-desktop","preemptionPolicy":"PreemptLowerPriority","priority":0,"restartPolicy":"Always","schedulerName":"default-scheduler","securityContext":{"fsGroup":1001,"runAsUser":1001},"serviceAccount":"default","serviceAccountName":"default","subdomain":"ghost-1731881169-mariadb","terminationGracePeriodSeconds":30,"tolerations":[{"effect":"NoExecute","key":"node.kubernetes.io/not-ready","operator":"Exists","tolerationSeconds":300},{"effect":"NoExecute","key":"node.kubernetes.io/unreachable","operator":"Exists","tolerationSeconds":300}],"volumes":[{"name":"data","persistentVolumeClaim":{"claimName":"data-ghost-1731881169-mariadb-0"}},{"configMap":{"defaultMode":420,"name":"ghost-1731881169-mariadb"},"name":"config"},{"name":"kube-api-access-g7ksp","projected":{"defaultMode":420,"sources":[{"serviceAccountToken":{"expirationSeconds":3607,"path":"token"}},{"configMap":{"items":[{"key":"ca.crt","path":"ca.crt"}],"name":"kube-root-ca.crt"}},{"downwardAPI":{"items":[{"fieldRef":{"apiVersion":"v1","fieldPath":"metadata.namespace"},"path":"namespace"}]}}]}}]},"status":{"conditions":[{"lastTransitionTime":"2024-11-17T22:06:31+00:00","status":"True","type":"PodReadyToStartContainers"},{"lastTransitionTime":"2024-11-17T22:06:13+00:00","status":"True","type":"Initialized"},{"lastTransitionTime":"2024-11-17T22:07:01+00:00","status":"True","type":"Ready"},{"lastTransitionTime":"2024-11-17T22:07:01+00:00","status":"True","type":"ContainersReady"},{"lastTransitionTime":"2024-11-17T22:06:13+00:00","status":"True","type":"PodScheduled"}],"containerStatuses":[{"containerID":"docker://546803d6fdfe8c7bd262ea12e6e05ea383bf0c325204d150cac5a4c5df03b4c9","image":"bitnami/mariadb:10.3.22-debian-10-r27","imageID":"docker-pullable://bitnami/mariadb@sha256:6f6b95d95e0effb86e0d699bc01e5e53530a0ab5ce8fa1d42bd2280479f57b35","lastState":{},"name":"mariadb","ready":true,"restartCount":0,"started":true,"state":{"running":{"startedAt":"2024-11-17T22:06:30+00:00"}}}],"hostIP":"192.168.65.3","hostIPs":[{"ip":"192.168.65.3"}],"phase":"Running","podIP":"10.1.0.122","podIPs":[{"ip":"10.1.0.122"}],"qosClass":"BestEffort","startTime":"2024-11-17T22:06:13+00:00"}}
+
+      '
+  creationTimestamp: '2024-11-17T22:06:12+00:00'
+  generateName: ghost-1731881169-mariadb-
+  labels:
+    app: mariadb
+    apps.kubernetes.io/pod-index: '0'
+    chart: mariadb-7.3.12
+    component: master
+    controller-revision-hash: ghost-1731881169-mariadb-5fbd6b5b9
+    release: ghost-1731881169
+    statefulset.kubernetes.io/pod-name: ghost-1731881169-mariadb-0
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:generateName: {}
+        f:labels:
+          .: {}
+          f:app: {}
+          f:apps.kubernetes.io/pod-index: {}
+          f:chart: {}
+          f:component: {}
+          f:controller-revision-hash: {}
+          f:release: {}
+          f:statefulset.kubernetes.io/pod-name: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"31abfae8-84d8-411d-bdab-8daee30e9e6e"}: {}
+      f:spec:
+        f:affinity:
+          .: {}
+          f:podAntiAffinity:
+            .: {}
+            f:preferredDuringSchedulingIgnoredDuringExecution: {}
+        f:containers:
+          k:{"name":"mariadb"}:
+            .: {}
+            f:env:
+              .: {}
+              k:{"name":"MARIADBDatabase"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"MARIADBPassword"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:secretKeyRef: {}
+              k:{"name":"MARIADBRootPassword"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:secretKeyRef: {}
+              k:{"name":"MARIADBUser"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:livenessProbe:
+              .: {}
+              f:exec:
+                .: {}
+                f:command: {}
+              f:failureThreshold: {}
+              f:initialDelaySeconds: {}
+              f:periodSeconds: {}
+              f:successThreshold: {}
+              f:timeoutSeconds: {}
+            f:name: {}
+            f:ports:
+              .: {}
+              k:{"containerPort":3306,"protocol":"TCP"}:
+                .: {}
+                f:containerPort: {}
+                f:name: {}
+                f:protocol: {}
+            f:readinessProbe:
+              .: {}
+              f:exec:
+                .: {}
+                f:command: {}
+              f:failureThreshold: {}
+              f:initialDelaySeconds: {}
+              f:periodSeconds: {}
+              f:successThreshold: {}
+              f:timeoutSeconds: {}
+            f:resources: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+            f:volumeMounts:
+              .: {}
+              k:{"mountPath":"/bitnami/mariadb"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/opt/bitnami/mariadb/conf/my.cnf"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+                f:subPath: {}
+        f:dnsPolicy: {}
+        f:enableServiceLinks: {}
+        f:hostname: {}
+        f:restartPolicy: {}
+        f:schedulerName: {}
+        f:securityContext:
+          .: {}
+          f:fsGroup: {}
+          f:runAsUser: {}
+        f:serviceAccount: {}
+        f:serviceAccountName: {}
+        f:subdomain: {}
+        f:terminationGracePeriodSeconds: {}
+        f:volumes:
+          .: {}
+          k:{"name":"config"}:
+            .: {}
+            f:configMap:
+              .: {}
+              f:defaultMode: {}
+              f:name: {}
+            f:name: {}
+          k:{"name":"data"}:
+            .: {}
+            f:name: {}
+            f:persistentVolumeClaim:
+              .: {}
+              f:claimName: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: '2024-11-17T22:06:12+00:00'
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          .: {}
+          k:{"type":"PodScheduled"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+    manager: kube-scheduler
+    operation: Update
+    subresource: status
+    time: '2024-11-17T22:06:12+00:00'
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"ContainersReady"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Initialized"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"PodReadyToStartContainers"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Ready"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+        f:containerStatuses: {}
+        f:hostIP: {}
+        f:hostIPs: {}
+        f:phase: {}
+        f:podIP: {}
+        f:podIPs:
+          .: {}
+          k:{"ip":"10.1.0.122"}:
+            .: {}
+            f:ip: {}
+        f:startTime: {}
+    manager: kubelet
+    operation: Update
+    subresource: status
+    time: '2024-11-17T22:07:01+00:00'
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+    manager: kubectl-client-side-apply
+    operation: Update
+    time: '2024-11-22T03:24:19+00:00'
+  name: ghost-1731881169-mariadb-0
+  namespace: default
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: StatefulSet
+    name: ghost-1731881169-mariadb
+    uid: 31abfae8-84d8-411d-bdab-8daee30e9e6e
+  resourceVersion: '395030'
+  uid: 217ff106-0c4c-435d-bfed-275e063d6050
+spec:
+  affinity:
+    podAntiAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - podAffinityTerm:
+          labelSelector:
+            matchLabels:
+              app: mariadb
+              release: ghost-1731881169
+          topologyKey: kubernetes.io/hostname
+        weight: 1
+  containers:
+  - env:
+    - name: MARIADB_ROOT_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          key: mariadb-root-password
+          name: ghost-1731881169-mariadb
+    - name: MARIADB_USER
+      value: bn_ghost
+    - name: MARIADB_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          key: mariadb-password
+          name: ghost-1731881169-mariadb
+    - name: MARIADB_DATABASE
+      value: bitnami_ghost
+    image: docker.io/bitnami/mariadb:10.3.22-debian-10-r27
+    imagePullPolicy: IfNotPresent
+    livenessProbe:
+      exec:
+        command:
+        - sh
+        - -c
+        - "password_aux=\"${MARIADB_ROOT_PASSWORD:-}\"\nif [ -f \"${MARIADB_ROOT_PASSWORD_FILE:-}\"\
+          \ ]; then\n    password_aux=$(cat $MARIADB_ROOT_PASSWORD_FILE)\nfi\nmysqladmin\
+          \ status -uroot -p$password_aux\n"
+      failureThreshold: 3
+      initialDelaySeconds: 120
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 1
+    name: mariadb
+    ports:
+    - containerPort: 3306
+      name: mysql
+      protocol: TCP
+    readinessProbe:
+      exec:
+        command:
+        - sh
+        - -c
+        - "password_aux=\"${MARIADB_ROOT_PASSWORD:-}\"\nif [ -f \"${MARIADB_ROOT_PASSWORD_FILE:-}\"\
+          \ ]; then\n    password_aux=$(cat $MARIADB_ROOT_PASSWORD_FILE)\nfi\nmysqladmin\
+          \ status -uroot -p$password_aux\n"
+      failureThreshold: 3
+      initialDelaySeconds: 30
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 1
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /bitnami/mariadb
+      name: data
+    - mountPath: /opt/bitnami/mariadb/conf/my.cnf
+      name: config
+      subPath: my.cnf
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-g7ksp
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  hostname: ghost-1731881169-mariadb-0
+  nodeName: docker-desktop
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    fsGroup: 1001
+    runAsUser: 1001
+  serviceAccount: default
+  serviceAccountName: default
+  subdomain: ghost-1731881169-mariadb
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: data
+    persistentVolumeClaim:
+      claimName: data-ghost-1731881169-mariadb-0
+  - configMap:
+      defaultMode: 420
+      name: ghost-1731881169-mariadb
+    name: config
+  - name: kube-api-access-g7ksp
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+status:
+  conditions:
+  - lastTransitionTime: '2024-11-17T22:06:31+00:00'
+    status: 'True'
+    type: PodReadyToStartContainers
+  - lastTransitionTime: '2024-11-17T22:06:13+00:00'
+    status: 'True'
+    type: Initialized
+  - lastTransitionTime: '2024-11-17T22:07:01+00:00'
+    status: 'True'
+    type: Ready
+  - lastTransitionTime: '2024-11-17T22:07:01+00:00'
+    status: 'True'
+    type: ContainersReady
+  - lastTransitionTime: '2024-11-17T22:06:13+00:00'
+    status: 'True'
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://546803d6fdfe8c7bd262ea12e6e05ea383bf0c325204d150cac5a4c5df03b4c9
+    image: bitnami/mariadb:10.3.22-debian-10-r27
+    imageID: docker-pullable://bitnami/mariadb@sha256:6f6b95d95e0effb86e0d699bc01e5e53530a0ab5ce8fa1d42bd2280479f57b35
+    lastState: {}
+    name: mariadb
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: '2024-11-17T22:06:30+00:00'
+  hostIP: 192.168.65.3
+  hostIPs:
+  - ip: 192.168.65.3
+  phase: Running
+  podIP: 10.1.0.122
+  podIPs:
+  - ip: 10.1.0.122
+  qosClass: BestEffort
+  startTime: '2024-11-17T22:06:13+00:00'
