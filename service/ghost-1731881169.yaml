@@ -80,7 +80,7 @@ spec:
   ipFamilyPolicy: SingleStack
   ports:
   - name: http
-    nodePort: 30711
+    nodePort: 30712
     port: 80
     protocol: TCP
     targetPort: 80
