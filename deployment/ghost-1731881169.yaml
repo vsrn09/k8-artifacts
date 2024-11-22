@@ -1,0 +1,342 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: '1'
+    meta.helm.sh/release-name: ghost-1731881169
+    meta.helm.sh/release-namespace: default
+  creationTimestamp: '2024-11-17T22:06:12+00:00'
+  generation: 1
+  labels:
+    app: ghost-1731881169
+    app.kubernetes.io/managed-by: Helm
+    chart: ghost-9.1.13
+    heritage: Helm
+    release: ghost-1731881169
+  managedFields:
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:meta.helm.sh/release-name: {}
+          f:meta.helm.sh/release-namespace: {}
+        f:labels:
+          .: {}
+          f:app: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:chart: {}
+          f:heritage: {}
+          f:release: {}
+      f:spec:
+        f:progressDeadlineSeconds: {}
+        f:replicas: {}
+        f:revisionHistoryLimit: {}
+        f:selector: {}
+        f:strategy:
+          f:rollingUpdate:
+            .: {}
+            f:maxSurge: {}
+            f:maxUnavailable: {}
+          f:type: {}
+        f:template:
+          f:metadata:
+            f:labels:
+              .: {}
+              f:app: {}
+              f:chart: {}
+              f:release: {}
+          f:spec:
+            f:containers:
+              k:{"name":"ghost-1731881169"}:
+                .: {}
+                f:env:
+                  .: {}
+                  k:{"name":"ALLOW_EMPTY_PASSWORD"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"BLOG_TITLE"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"GHOST_DATABASE_NAME"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"GHOST_DATABASE_PASSWORD"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef: {}
+                  k:{"name":"GHOST_DATABASE_USER"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"GHOST_EMAIL"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"GHOST_HOST"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"GHOST_PASSWORD"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef: {}
+                  k:{"name":"GHOST_PORT_NUMBER"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"GHOST_PROTOCOL"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"GHOST_USERNAME"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"MARIADB_HOST"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"MARIADB_PORT_NUMBER"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:livenessProbe:
+                  .: {}
+                  f:failureThreshold: {}
+                  f:httpGet:
+                    .: {}
+                    f:httpHeaders: {}
+                    f:path: {}
+                    f:port: {}
+                    f:scheme: {}
+                  f:initialDelaySeconds: {}
+                  f:periodSeconds: {}
+                  f:successThreshold: {}
+                  f:timeoutSeconds: {}
+                f:name: {}
+                f:ports:
+                  .: {}
+                  k:{"containerPort":2368,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:name: {}
+                    f:protocol: {}
+                f:readinessProbe:
+                  .: {}
+                  f:failureThreshold: {}
+                  f:httpGet:
+                    .: {}
+                    f:httpHeaders: {}
+                    f:path: {}
+                    f:port: {}
+                    f:scheme: {}
+                  f:initialDelaySeconds: {}
+                  f:periodSeconds: {}
+                  f:successThreshold: {}
+                  f:timeoutSeconds: {}
+                f:resources:
+                  .: {}
+                  f:requests:
+                    .: {}
+                    f:cpu: {}
+                    f:memory: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+                f:volumeMounts:
+                  .: {}
+                  k:{"mountPath":"/bitnami/ghost"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+            f:dnsPolicy: {}
+            f:restartPolicy: {}
+            f:schedulerName: {}
+            f:securityContext:
+              .: {}
+              f:fsGroup: {}
+              f:runAsUser: {}
+            f:terminationGracePeriodSeconds: {}
+            f:volumes:
+              .: {}
+              k:{"name":"ghost-data"}:
+                .: {}
+                f:name: {}
+                f:persistentVolumeClaim:
+                  .: {}
+                  f:claimName: {}
+    manager: helm
+    operation: Update
+    time: '2024-11-17T22:06:12+00:00'
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          f:deployment.kubernetes.io/revision: {}
+      f:status:
+        f:conditions:
+          .: {}
+          k:{"type":"Available"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Progressing"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+        f:observedGeneration: {}
+        f:replicas: {}
+        f:unavailableReplicas: {}
+        f:updatedReplicas: {}
+    manager: kube-controller-manager
+    operation: Update
+    subresource: status
+    time: '2024-11-17T22:16:12+00:00'
+  name: ghost-1731881169
+  namespace: default
+  resourceVersion: '46971'
+  uid: ca3a3cc2-dc0b-4c80-b255-48ba23621bca
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: ghost-1731881169
+      release: ghost-1731881169
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: ghost-1731881169
+        chart: ghost-9.1.13
+        release: ghost-1731881169
+    spec:
+      containers:
+      - env:
+        - name: ALLOW_EMPTY_PASSWORD
+          value: 'yes'
+        - name: MARIADB_HOST
+          value: ghost-1731881169-mariadb
+        - name: MARIADB_PORT_NUMBER
+          value: '3306'
+        - name: GHOST_DATABASE_NAME
+          value: bitnami_ghost
+        - name: GHOST_DATABASE_USER
+          value: bn_ghost
+        - name: GHOST_DATABASE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: mariadb-password
+              name: ghost-1731881169-mariadb
+        - name: GHOST_HOST
+          value: ghost.example.com/
+        - name: GHOST_PROTOCOL
+          value: http
+        - name: GHOST_PORT_NUMBER
+          value: '80'
+        - name: GHOST_USERNAME
+          value: admin
+        - name: GHOST_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: ghost-password
+              name: ghost-1731881169
+        - name: GHOST_EMAIL
+          value: email@example.com
+        - name: BLOG_TITLE
+          value: User's Blog
+        image: docker.io/bitnami/ghost:3.9.0-debian-10-r0
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 6
+          httpGet:
+            httpHeaders:
+            - name: Host
+              value: ghost.example.com/
+            path: /
+            port: http
+            scheme: HTTP
+          initialDelaySeconds: 120
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 5
+        name: ghost-1731881169
+        ports:
+        - containerPort: 2368
+          name: http
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 6
+          httpGet:
+            httpHeaders:
+            - name: Host
+              value: ghost.example.com/
+            path: /
+            port: http
+            scheme: HTTP
+          initialDelaySeconds: 30
+          periodSeconds: 5
+          successThreshold: 1
+          timeoutSeconds: 3
+        resources:
+          requests:
+            cpu: 300m
+            memory: 512Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /bitnami/ghost
+          name: ghost-data
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext:
+        fsGroup: 1001
+        runAsUser: 1001
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: ghost-data
+        persistentVolumeClaim:
+          claimName: ghost-1731881169
+status:
+  conditions:
+  - lastTransitionTime: '2024-11-17T22:06:12+00:00'
+    lastUpdateTime: '2024-11-17T22:06:12+00:00'
+    message: Deployment does not have minimum availability.
+    reason: MinimumReplicasUnavailable
+    status: 'False'
+    type: Available
+  - lastTransitionTime: '2024-11-17T22:16:12+00:00'
+    lastUpdateTime: '2024-11-17T22:16:12+00:00'
+    message: ReplicaSet "ghost-1731881169-6658b8ddb" has timed out progressing.
+    reason: ProgressDeadlineExceeded
+    status: 'False'
+    type: Progressing
+  observedGeneration: 1
+  replicas: 1
+  unavailableReplicas: 1
+  updatedReplicas: 1
