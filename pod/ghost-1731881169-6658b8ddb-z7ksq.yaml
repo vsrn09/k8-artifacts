@@ -202,7 +202,7 @@ metadata:
     manager: kubelet
     operation: Update
     subresource: status
-    time: '2024-11-22T05:46:24+00:00'
+    time: '2024-11-22T20:27:14+00:00'
   name: ghost-1731881169-6658b8ddb-z7ksq
   namespace: default
   ownerReferences:
@@ -212,7 +212,7 @@ metadata:
     kind: ReplicaSet
     name: ghost-1731881169-6658b8ddb
     uid: 1eed141d-7d6b-4e90-9fa6-24d7c9058d2b
-  resourceVersion: '406408'
+  resourceVersion: '453653'
   uid: 3b191612-b11b-4670-9481-ecca84af9e1b
 spec:
   containers:
@@ -360,24 +360,23 @@ status:
     status: 'True'
     type: PodScheduled
   containerStatuses:
-  - containerID: docker://2fa5e317fe396400d25d5c98ff2b99ba5cf6e61de3811bd89bf6907e10cf4f94
+  - containerID: docker://e3a99d91d91c9c01b64858a63ef87e7f670dadef5c594677f4bc772b22db2713
     image: bitnami/ghost:3.9.0-debian-10-r0
     imageID: docker-pullable://bitnami/ghost@sha256:0d04f8bd5f9bd57e44b8e1d55c181175046760b233cdf150fa8bc207b492e721
     lastState:
       terminated:
-        containerID: docker://2fa5e317fe396400d25d5c98ff2b99ba5cf6e61de3811bd89bf6907e10cf4f94
+        containerID: docker://b0db25ca6d92559c856c74b22b51d0374f7d6785f9db06d08ca522ceae02c72e
         exitCode: 143
-        finishedAt: '2024-11-22T05:46:23+00:00'
+        finishedAt: '2024-11-22T20:27:12+00:00'
         reason: Error
-        startedAt: '2024-11-22T05:43:33+00:00'
+        startedAt: '2024-11-22T20:24:18+00:00'
     name: ghost-1731881169
     ready: false
-    restartCount: 826
-    started: false
+    restartCount: 937
+    started: true
     state:
-      waiting:
-        message: back-off 5m0s restarting failed container=ghost-1731881169 pod=ghost-1731881169-6658b8ddb-z7ksq_default(3b191612-b11b-4670-9481-ecca84af9e1b)
-        reason: CrashLoopBackOff
+      running:
+        startedAt: '2024-11-22T20:27:12+00:00'
   hostIP: 192.168.65.3
   hostIPs:
   - ip: 192.168.65.3
