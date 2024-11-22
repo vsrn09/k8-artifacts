@@ -1,0 +1,94 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    meta.helm.sh/release-name: ghost-1731881169
+    meta.helm.sh/release-namespace: default
+  creationTimestamp: '2024-11-17T22:06:12+00:00'
+  labels:
+    app: ghost-1731881169
+    app.kubernetes.io/managed-by: Helm
+    chart: ghost-9.1.13
+    heritage: Helm
+    release: ghost-1731881169
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:meta.helm.sh/release-name: {}
+          f:meta.helm.sh/release-namespace: {}
+        f:labels:
+          .: {}
+          f:app: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:chart: {}
+          f:heritage: {}
+          f:release: {}
+      f:spec:
+        f:allocateLoadBalancerNodePorts: {}
+        f:externalTrafficPolicy: {}
+        f:internalTrafficPolicy: {}
+        f:ports:
+          .: {}
+          k:{"port":80,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:port: {}
+            f:protocol: {}
+        f:selector: {}
+        f:sessionAffinity: {}
+        f:type: {}
+    manager: helm
+    operation: Update
+    time: '2024-11-17T22:06:12+00:00'
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:loadBalancer:
+          f:ingress: {}
+    manager: kube-vpnkit-forwarder
+    operation: Update
+    subresource: status
+    time: '2024-11-17T22:06:12+00:00'
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:ports:
+          k:{"port":80,"protocol":"TCP"}:
+            f:targetPort: {}
+    manager: OpenAPI-Generator
+    operation: Update
+    time: '2024-11-19T02:39:34+00:00'
+  name: ghost-1731881169
+  namespace: default
+  resourceVersion: '154661'
+  uid: 65e2e377-64d3-4d06-b587-09b477c695c0
+spec:
+  allocateLoadBalancerNodePorts: true
+  clusterIP: 10.106.112.83
+  clusterIPs:
+  - 10.106.112.83
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: http
+    nodePort: 30711
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: ghost-1731881169
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - hostname: localhost
