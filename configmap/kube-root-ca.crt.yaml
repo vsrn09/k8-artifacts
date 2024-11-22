@@ -1,0 +1,67 @@
+apiVersion: v1
+data:
+  ca.crt: '-----BEGIN CERTIFICATE-----
+
+    MIIDBTCCAe2gAwIBAgIIfpCNqsZia/wwDQYJKoZIhvcNAQELBQAwFTETMBEGA1UE
+
+    AxMKa3ViZXJuZXRlczAeFw0yNDExMTcwNTQzMzJaFw0zNDExMTUwNTQ4MzJaMBUx
+
+    EzARBgNVBAMTCmt1YmVybmV0ZXMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
+
+    AoIBAQC2/wqRIp1UQLGGvxcOc3xz+RZGnxt4hZsLp/ZuTJauZI3wYLzCFBjhst6Y
+
+    7lILZqIDb39nldYeqOU5ipyYhaM4n+5lFpESTymyR9SkoGVcrx4O59I3FtSL/s+z
+
+    M4LQnUjWgn+oWcyuYuDebUkT05pwccFzdYXWYcAs192SgAUEv+rnqSPnARO3GhWO
+
+    Ork7jvfwgJVXr3T7Pz5AbdZyxnujNCKc5vhdYG/9BHQqigGCBMpEP6beryrd0BMg
+
+    UsW1BaT3kPg1EAltJNoofHPV3+8Y/blEod6GI3lz6kqT4HhfVRD+lkMBkTiIBRsk
+
+    yNUpVdNwGNWJy9g3E06VqmJIcjgFAgMBAAGjWTBXMA4GA1UdDwEB/wQEAwICpDAP
+
+    BgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBS4RXch0WuEZ9kyo5NW6KXnezoS/jAV
+
+    BgNVHREEDjAMggprdWJlcm5ldGVzMA0GCSqGSIb3DQEBCwUAA4IBAQA5vOV9qJha
+
+    jrjNC4m9hLQeJl5/hwWQC2OppDSYRrkQevo487ER/AHJtypdhbFmMz/ZOMTDdLjf
+
+    AlVsgNQe62m2/jvwXLPBVaahhUFcxBCg44Mi5Hyu1v6Bfv2GQwgMgiEvvFtVium6
+
+    H/FiLgKPANTitnZxJZS1pEWWfGUtcmTMl19LlsXUaWPzx5kSuxAqUYzj37UdI/GL
+
+    ywz+1lJY2/Hax4CQdkY4wOnBspskJLPIS2pA7GE1sCea44A6mZa0nj+dGVBTDBCf
+
+    NUgic4YPwMVzxEiyOQj545jVemWrj+TBSppwX08uSAUg2h1VG1l2NMoxGrcZtZkB
+
+    nq0JZZvs65qC
+
+    -----END CERTIFICATE-----
+
+    '
+kind: ConfigMap
+metadata:
+  annotations:
+    kubernetes.io/description: Contains a CA bundle that can be used to verify the
+      kube-apiserver when using internal endpoints such as the internal service IP
+      or kubernetes.default.svc. No other usage is guaranteed across distributions
+      of Kubernetes clusters.
+  creationTimestamp: '2024-11-17T05:50:35+00:00'
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:ca.crt: {}
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kubernetes.io/description: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: '2024-11-17T05:50:35+00:00'
+  name: kube-root-ca.crt
+  namespace: kube-node-lease
+  resourceVersion: '308'
+  uid: ec474285-9675-4f45-b541-40e210d18c29
