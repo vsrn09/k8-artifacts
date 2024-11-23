@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   annotations:
-    kubectl.kubernetes.io/last-applied-configuration: '{"apiVersion":"apps/v1","kind":"StatefulSet","metadata":{"annotations":{"meta.helm.sh/release-name":"ghost-1731881169","meta.helm.sh/release-namespace":"default"},"creationTimestamp":"2024-11-17T22:06:12+00:00","generation":1,"labels":{"app":"mariadb","app.kubernetes.io/managed-by":"Helm","chart":"mariadb-7.1.12","component":"master","heritage":"Helm","release":"ghost-1731881169"},"managedFields":[{"apiVersion":"apps/v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{".":{},"f:meta.helm.sh/release-name":{},"f:meta.helm.sh/release-namespace":{}},"f:labels":{".":{},"f:app":{},"f:app.kubernetes.io/managed-by":{},"f:chart":{},"f:component":{},"f:heritage":{},"f:release":{}}},"f:spec":{"f:persistentVolumeClaimRetentionPolicy":{".":{},"f:whenDeleted":{},"f:whenScaled":{}},"f:podManagementPolicy":{},"f:replicas":{},"f:revisionHistoryLimit":{},"f:selector":{},"f:serviceName":{},"f:template":{"f:metadata":{"f:labels":{".":{},"f:app":{},"f:chart":{},"f:component":{},"f:release":{}}},"f:spec":{"f:affinity":{".":{},"f:podAntiAffinity":{".":{},"f:preferredDuringSchedulingIgnoredDuringExecution":{}}},"f:containers":{"k:{\"name\":\"mariadb\"}":{".":{},"f:env":{".":{},"k:{\"name\":\"MARIADBDatabase\"}":{".":{},"f:name":{},"f:value":{}},"k:{\"name\":\"MARIADBPassword\"}":{".":{},"f:name":{},"f:valueFrom":{".":{},"f:secretKeyRef":{}}},"k:{\"name\":\"MARIADBRootPassword\"}":{".":{},"f:name":{},"f:valueFrom":{".":{},"f:secretKeyRef":{}}},"k:{\"name\":\"MARIADBUser\"}":{".":{},"f:name":{},"f:value":{}}},"f:image":{},"f:imagePullPolicy":{},"f:livenessProbe":{".":{},"f:exec":{".":{},"f:command":{}},"f:failureThreshold":{},"f:initialDelaySeconds":{},"f:periodSeconds":{},"f:successThreshold":{},"f:timeoutSeconds":{}},"f:name":{},"f:ports":{".":{},"k:{\"containerPort\":3306,\"protocol\":\"TCP\"}":{".":{},"f:containerPort":{},"f:name":{},"f:protocol":{}}},"f:readinessProbe":{".":{},"f:exec":{".":{},"f:command":{}},"f:failureThreshold":{},"f:initialDelaySeconds":{},"f:periodSeconds":{},"f:successThreshold":{},"f:timeoutSeconds":{}},"f:resources":{},"f:terminationMessagePath":{},"f:terminationMessagePolicy":{},"f:volumeMounts":{".":{},"k:{\"mountPath\":\"/bitnami/mariadb\"}":{".":{},"f:mountPath":{},"f:name":{}},"k:{\"mountPath\":\"/opt/bitnami/mariadb/conf/my.cnf\"}":{".":{},"f:mountPath":{},"f:name":{},"f:subPath":{}}}}},"f:dnsPolicy":{},"f:restartPolicy":{},"f:schedulerName":{},"f:securityContext":{".":{},"f:fsGroup":{},"f:runAsUser":{}},"f:serviceAccount":{},"f:serviceAccountName":{},"f:terminationGracePeriodSeconds":{},"f:volumes":{".":{},"k:{\"name\":\"config\"}":{".":{},"f:configMap":{".":{},"f:defaultMode":{},"f:name":{}},"f:name":{}}}}},"f:updateStrategy":{"f:type":{}},"f:volumeClaimTemplates":{}}},"manager":"helm","operation":"Update","time":"2024-11-17T22:06:12+00:00"},{"apiVersion":"apps/v1","fieldsType":"FieldsV1","fieldsV1":{"f:status":{"f:availableReplicas":{},"f:collisionCount":{},"f:currentReplicas":{},"f:currentRevision":{},"f:observedGeneration":{},"f:readyReplicas":{},"f:replicas":{},"f:updateRevision":{},"f:updatedReplicas":{}}},"manager":"kube-controller-manager","operation":"Update","subresource":"status","time":"2024-11-17T22:07:01+00:00"},{"apiVersion":"apps/v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{"f:kubectl.kubernetes.io/last-applied-configuration":{}}}},"manager":"kubectl-client-side-apply","operation":"Update","time":"2024-11-20T16:52:24+00:00"}],"name":"ghost-1731881169-mariadb","namespace":"default","resourceVersion":"274833","uid":"31abfae8-84d8-411d-bdab-8daee30e9e6e"},"spec":{"persistentVolumeClaimRetentionPolicy":{"whenDeleted":"Retain","whenScaled":"Retain"},"podManagementPolicy":"OrderedReady","replicas":1,"revisionHistoryLimit":10,"selector":{"matchLabels":{"app":"mariadb","component":"master","release":"ghost-1731881169"}},"serviceName":"ghost-1731881169-mariadb","template":{"metadata":{"labels":{"app":"mariadb","chart":"mariadb-7.3.12","component":"master","release":"ghost-1731881169"}},"spec":{"affinity":{"podAntiAffinity":{"preferredDuringSchedulingIgnoredDuringExecution":[{"podAffinityTerm":{"labelSelector":{"matchLabels":{"app":"mariadb","release":"ghost-1731881169"}},"topologyKey":"kubernetes.io/hostname"},"weight":1}]}},"containers":[{"env":[{"name":"MARIADB_ROOT_PASSWORD","valueFrom":{"secretKeyRef":{"key":"mariadb-root-password","name":"ghost-1731881169-mariadb"}}},{"name":"MARIADB_USER","value":"bn_ghost"},{"name":"MARIADB_PASSWORD","valueFrom":{"secretKeyRef":{"key":"mariadb-password","name":"ghost-1731881169-mariadb"}}},{"name":"MARIADB_DATABASE","value":"bitnami_ghost"}],"image":"docker.io/bitnami/mariadb:10.3.22-debian-10-r27","imagePullPolicy":"IfNotPresent","livenessProbe":{"exec":{"command":["sh","-c","password_aux=\"${MARIADB_ROOT_PASSWORD:-}\"\nif
+    kubectl.kubernetes.io/last-applied-configuration: '{"apiVersion":"apps/v1","kind":"StatefulSet","metadata":{"annotations":{"meta.helm.sh/release-name":"ghost-1731881169","meta.helm.sh/release-namespace":"default"},"creationTimestamp":"2024-11-17T22:06:12+00:00","generation":1,"labels":{"app":"mariadb","app.kubernetes.io/managed-by":"Helm","chart":"mariadb-7.1.12","component":"master","heritage":"Helm","release":"ghost-1731881169"},"managedFields":[{"apiVersion":"apps/v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{".":{},"f:meta.helm.sh/release-name":{},"f:meta.helm.sh/release-namespace":{}},"f:labels":{".":{},"f:app":{},"f:app.kubernetes.io/managed-by":{},"f:component":{},"f:heritage":{},"f:release":{}}},"f:spec":{"f:persistentVolumeClaimRetentionPolicy":{".":{},"f:whenDeleted":{},"f:whenScaled":{}},"f:podManagementPolicy":{},"f:replicas":{},"f:revisionHistoryLimit":{},"f:selector":{},"f:serviceName":{},"f:template":{"f:metadata":{"f:labels":{".":{},"f:app":{},"f:chart":{},"f:component":{},"f:release":{}}},"f:spec":{"f:affinity":{".":{},"f:podAntiAffinity":{".":{},"f:preferredDuringSchedulingIgnoredDuringExecution":{}}},"f:containers":{"k:{\"name\":\"mariadb\"}":{".":{},"f:env":{".":{},"k:{\"name\":\"MARIADBDatabase\"}":{".":{},"f:name":{},"f:value":{}},"k:{\"name\":\"MARIADBPassword\"}":{".":{},"f:name":{},"f:valueFrom":{".":{},"f:secretKeyRef":{}}},"k:{\"name\":\"MARIADBRootPassword\"}":{".":{},"f:name":{},"f:valueFrom":{".":{},"f:secretKeyRef":{}}},"k:{\"name\":\"MARIADBUser\"}":{".":{},"f:name":{},"f:value":{}}},"f:image":{},"f:imagePullPolicy":{},"f:livenessProbe":{".":{},"f:exec":{".":{},"f:command":{}},"f:failureThreshold":{},"f:initialDelaySeconds":{},"f:periodSeconds":{},"f:successThreshold":{},"f:timeoutSeconds":{}},"f:name":{},"f:ports":{".":{},"k:{\"containerPort\":3306,\"protocol\":\"TCP\"}":{".":{},"f:containerPort":{},"f:name":{},"f:protocol":{}}},"f:readinessProbe":{".":{},"f:exec":{".":{},"f:command":{}},"f:failureThreshold":{},"f:initialDelaySeconds":{},"f:periodSeconds":{},"f:successThreshold":{},"f:timeoutSeconds":{}},"f:resources":{},"f:terminationMessagePath":{},"f:terminationMessagePolicy":{},"f:volumeMounts":{".":{},"k:{\"mountPath\":\"/bitnami/mariadb\"}":{".":{},"f:mountPath":{},"f:name":{}},"k:{\"mountPath\":\"/opt/bitnami/mariadb/conf/my.cnf\"}":{".":{},"f:mountPath":{},"f:name":{},"f:subPath":{}}}}},"f:dnsPolicy":{},"f:restartPolicy":{},"f:schedulerName":{},"f:securityContext":{".":{},"f:fsGroup":{},"f:runAsUser":{}},"f:serviceAccount":{},"f:serviceAccountName":{},"f:terminationGracePeriodSeconds":{},"f:volumes":{".":{},"k:{\"name\":\"config\"}":{".":{},"f:configMap":{".":{},"f:defaultMode":{},"f:name":{}},"f:name":{}}}}},"f:updateStrategy":{"f:type":{}},"f:volumeClaimTemplates":{}}},"manager":"helm","operation":"Update","time":"2024-11-17T22:06:12+00:00"},{"apiVersion":"apps/v1","fieldsType":"FieldsV1","fieldsV1":{"f:status":{"f:availableReplicas":{},"f:collisionCount":{},"f:currentReplicas":{},"f:currentRevision":{},"f:observedGeneration":{},"f:readyReplicas":{},"f:replicas":{},"f:updateRevision":{},"f:updatedReplicas":{}}},"manager":"kube-controller-manager","operation":"Update","subresource":"status","time":"2024-11-17T22:07:01+00:00"},{"apiVersion":"apps/v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{"f:kubectl.kubernetes.io/last-applied-configuration":{}},"f:labels":{"f:chart":{}}}},"manager":"kubectl-client-side-apply","operation":"Update","time":"2024-11-22T20:32:04+00:00"}],"name":"ghost-1731881169-mariadb","namespace":"default","resourceVersion":"454057","uid":"31abfae8-84d8-411d-bdab-8daee30e9e6e"},"spec":{"persistentVolumeClaimRetentionPolicy":{"whenDeleted":"Retain","whenScaled":"Retain"},"podManagementPolicy":"OrderedReady","replicas":1,"revisionHistoryLimit":10,"selector":{"matchLabels":{"app":"mariadb","component":"master","release":"ghost-1731881169"}},"serviceName":"ghost-1731881169-mariadb","template":{"metadata":{"labels":{"app":"mariadb","chart":"mariadb-7.3.12","component":"master","release":"ghost-1731881169"}},"spec":{"affinity":{"podAntiAffinity":{"preferredDuringSchedulingIgnoredDuringExecution":[{"podAffinityTerm":{"labelSelector":{"matchLabels":{"app":"mariadb","release":"ghost-1731881169"}},"topologyKey":"kubernetes.io/hostname"},"weight":1}]}},"containers":[{"env":[{"name":"MARIADB_ROOT_PASSWORD","valueFrom":{"secretKeyRef":{"key":"mariadb-root-password","name":"ghost-1731881169-mariadb"}}},{"name":"MARIADB_USER","value":"bn_ghost"},{"name":"MARIADB_PASSWORD","valueFrom":{"secretKeyRef":{"key":"mariadb-password","name":"ghost-1731881169-mariadb"}}},{"name":"MARIADB_DATABASE","value":"bitnami_ghost"}],"image":"docker.io/bitnami/mariadb:10.1.22-debian-10-r27","imagePullPolicy":"IfNotPresent","livenessProbe":{"exec":{"command":["sh","-c","password_aux=\"${MARIADB_ROOT_PASSWORD:-}\"\nif
       [ -f \"${MARIADB_ROOT_PASSWORD_FILE:-}\" ]; then\n    password_aux=$(cat $MARIADB_ROOT_PASSWORD_FILE)\nfi\nmysqladmin
       status -uroot -p$password_aux\n"]},"failureThreshold":3,"initialDelaySeconds":120,"periodSeconds":10,"successThreshold":1,"timeoutSeconds":1},"name":"mariadb","ports":[{"containerPort":3306,"name":"mysql","protocol":"TCP"}],"readinessProbe":{"exec":{"command":["sh","-c","password_aux=\"${MARIADB_ROOT_PASSWORD:-}\"\nif
       [ -f \"${MARIADB_ROOT_PASSWORD_FILE:-}\" ]; then\n    password_aux=$(cat $MARIADB_ROOT_PASSWORD_FILE)\nfi\nmysqladmin
@@ -12,7 +12,7 @@ metadata:
     meta.helm.sh/release-name: ghost-1731881169
     meta.helm.sh/release-namespace: default
   creationTimestamp: '2024-11-17T22:06:12+00:00'
-  generation: 1
+  generation: 2
   labels:
     app: mariadb
     app.kubernetes.io/managed-by: Helm
@@ -85,7 +85,6 @@ metadata:
                     .: {}
                     f:name: {}
                     f:value: {}
-                f:image: {}
                 f:imagePullPolicy: {}
                 f:livenessProbe:
                   .: {}
@@ -157,34 +156,38 @@ metadata:
   - apiVersion: apps/v1
     fieldsType: FieldsV1
     fieldsV1:
+      f:metadata:
+        f:annotations:
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:labels:
+          f:chart: {}
+      f:spec:
+        f:template:
+          f:spec:
+            f:containers:
+              k:{"name":"mariadb"}:
+                f:image: {}
+    manager: kubectl-client-side-apply
+    operation: Update
+    time: '2024-11-23T02:10:48+00:00'
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
       f:status:
         f:availableReplicas: {}
         f:collisionCount: {}
-        f:currentReplicas: {}
         f:currentRevision: {}
         f:observedGeneration: {}
-        f:readyReplicas: {}
         f:replicas: {}
         f:updateRevision: {}
         f:updatedReplicas: {}
     manager: kube-controller-manager
     operation: Update
     subresource: status
-    time: '2024-11-17T22:07:01+00:00'
-  - apiVersion: apps/v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:metadata:
-        f:annotations:
-          f:kubectl.kubernetes.io/last-applied-configuration: {}
-        f:labels:
-          f:chart: {}
-    manager: kubectl-client-side-apply
-    operation: Update
-    time: '2024-11-22T20:32:04+00:00'
+    time: '2024-11-23T02:10:52+00:00'
   name: ghost-1731881169-mariadb
   namespace: default
-  resourceVersion: '454057'
+  resourceVersion: '470671'
   uid: 31abfae8-84d8-411d-bdab-8daee30e9e6e
 spec:
   persistentVolumeClaimRetentionPolicy:
@@ -233,7 +236,7 @@ spec:
               name: ghost-1731881169-mariadb
         - name: MARIADB_DATABASE
           value: bitnami_ghost
-        image: docker.io/bitnami/mariadb:10.3.22-debian-10-r27
+        image: docker.io/bitnami/mariadb:10.1.22-debian-10-r27
         imagePullPolicy: IfNotPresent
         livenessProbe:
           exec:
@@ -311,12 +314,10 @@ spec:
     status:
       phase: Pending
 status:
-  availableReplicas: 1
+  availableReplicas: 0
   collisionCount: 0
-  currentReplicas: 1
   currentRevision: ghost-1731881169-mariadb-5fbd6b5b9
-  observedGeneration: 1
-  readyReplicas: 1
+  observedGeneration: 2
   replicas: 1
-  updateRevision: ghost-1731881169-mariadb-5fbd6b5b9
+  updateRevision: ghost-1731881169-mariadb-57d6f6865f
   updatedReplicas: 1
