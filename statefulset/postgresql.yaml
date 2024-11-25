@@ -236,20 +236,22 @@ metadata:
     fieldsType: FieldsV1
     fieldsV1:
       f:status:
+        f:availableReplicas: {}
         f:collisionCount: {}
         f:currentReplicas: {}
         f:currentRevision: {}
         f:observedGeneration: {}
+        f:readyReplicas: {}
         f:replicas: {}
         f:updateRevision: {}
         f:updatedReplicas: {}
     manager: kube-controller-manager
     operation: Update
     subresource: status
-    time: '2024-11-24T18:35:40+00:00'
+    time: '2024-11-24T18:36:33+00:00'
   name: postgresql
   namespace: test
-  resourceVersion: '613553'
+  resourceVersion: '613661'
   uid: 3f63c8d3-f183-4c08-8430-d9edb9984dec
 spec:
   persistentVolumeClaimRetentionPolicy:
@@ -425,11 +427,12 @@ spec:
     status:
       phase: Pending
 status:
-  availableReplicas: 0
+  availableReplicas: 1
   collisionCount: 0
   currentReplicas: 1
   currentRevision: postgresql-867949f475
   observedGeneration: 1
+  readyReplicas: 1
   replicas: 1
   updateRevision: postgresql-867949f475
   updatedReplicas: 1
