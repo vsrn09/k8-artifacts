@@ -1,0 +1,71 @@
+api_version: v1
+binary_data: null
+data:
+  GF_AUTH_LDAP_ALLOW_SIGN_UP: 'false'
+  GF_AUTH_LDAP_CONFIG_FILE: /opt/bitnami/grafana/conf/ldap.toml
+  GF_AUTH_LDAP_ENABLED: 'false'
+  GF_INSTALL_PLUGINS: ''
+  GF_PATHS_CONFIG: /opt/bitnami/grafana/conf/grafana.ini
+  GF_PATHS_DATA: /opt/bitnami/grafana/data
+  GF_PATHS_LOGS: /opt/bitnami/grafana/logs
+  GF_PATHS_PLUGINS: /opt/bitnami/grafana/data/plugins
+  GF_PATHS_PROVISIONING: /opt/bitnami/grafana/conf/provisioning
+  GF_SECURITY_ADMIN_USER: admin
+immutable: null
+kind: ConfigMap
+metadata:
+  annotations:
+    meta.helm.sh/release-name: grafana
+    meta.helm.sh/release-namespace: monitoring
+  creation_timestamp: '2024-11-28T02:37:21+00:00'
+  deletion_grace_period_seconds: null
+  deletion_timestamp: null
+  finalizers: null
+  generate_name: null
+  generation: null
+  labels:
+    app.kubernetes.io/component: grafana
+    app.kubernetes.io/instance: grafana
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/version: 11.3.0
+    helm.sh/chart: grafana-11.3.26
+  managed_fields:
+  - api_version: v1
+    fields_type: FieldsV1
+    fields_v1:
+      f:data:
+        .: {}
+        f:GF_AUTH_LDAP_ALLOW_SIGN_UP: {}
+        f:GF_AUTH_LDAP_CONFIG_FILE: {}
+        f:GF_AUTH_LDAP_ENABLED: {}
+        f:GF_INSTALL_PLUGINS: {}
+        f:GF_PATHS_CONFIG: {}
+        f:GF_PATHS_DATA: {}
+        f:GF_PATHS_LOGS: {}
+        f:GF_PATHS_PLUGINS: {}
+        f:GF_PATHS_PROVISIONING: {}
+        f:GF_SECURITY_ADMIN_USER: {}
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:meta.helm.sh/release-name: {}
+          f:meta.helm.sh/release-namespace: {}
+        f:labels:
+          .: {}
+          f:app.kubernetes.io/component: {}
+          f:app.kubernetes.io/instance: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:app.kubernetes.io/name: {}
+          f:app.kubernetes.io/version: {}
+          f:helm.sh/chart: {}
+    manager: helm
+    operation: Update
+    subresource: null
+    time: '2024-11-28T02:37:21+00:00'
+  name: grafana-envvars
+  namespace: monitoring
+  owner_references: null
+  resource_version: '867450'
+  self_link: null
+  uid: 617b7c54-b041-463b-afd1-27b81ce5cbdf
