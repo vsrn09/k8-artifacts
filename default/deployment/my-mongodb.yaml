@@ -1,0 +1,799 @@
+api_version: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: '1'
+    meta.helm.sh/release-name: my-mongodb
+    meta.helm.sh/release-namespace: default
+  creation_timestamp: '2024-11-24T17:03:54+00:00'
+  deletion_grace_period_seconds: null
+  deletion_timestamp: null
+  finalizers: null
+  generate_name: null
+  generation: 1
+  labels:
+    app.kubernetes.io/component: mongodb
+    app.kubernetes.io/instance: my-mongodb
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: mongodb
+    app.kubernetes.io/version: 8.0.3
+    helm.sh/chart: mongodb-16.3.0
+  managed_fields:
+  - api_version: apps/v1
+    fields_type: FieldsV1
+    fields_v1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:meta.helm.sh/release-name: {}
+          f:meta.helm.sh/release-namespace: {}
+        f:labels:
+          .: {}
+          f:app.kubernetes.io/component: {}
+          f:app.kubernetes.io/instance: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:app.kubernetes.io/name: {}
+          f:app.kubernetes.io/version: {}
+          f:helm.sh/chart: {}
+      f:spec:
+        f:progressDeadlineSeconds: {}
+        f:replicas: {}
+        f:revisionHistoryLimit: {}
+        f:selector: {}
+        f:strategy:
+          f:rollingUpdate:
+            .: {}
+            f:maxSurge: {}
+            f:maxUnavailable: {}
+          f:type: {}
+        f:template:
+          f:metadata:
+            f:labels:
+              .: {}
+              f:app.kubernetes.io/component: {}
+              f:app.kubernetes.io/instance: {}
+              f:app.kubernetes.io/managed-by: {}
+              f:app.kubernetes.io/name: {}
+              f:app.kubernetes.io/version: {}
+              f:helm.sh/chart: {}
+          f:spec:
+            f:affinity:
+              .: {}
+              f:podAntiAffinity:
+                .: {}
+                f:preferredDuringSchedulingIgnoredDuringExecution: {}
+            f:automountServiceAccountToken: {}
+            f:containers:
+              k:{"name":"mongodb"}:
+                .: {}
+                f:env:
+                  .: {}
+                  k:{"name":"ALLOW_EMPTY_PASSWORD"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"BITNAMI_DEBUG"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"MONGODB_DISABLE_JAVASCRIPT"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"MONGODB_DISABLE_SYSTEM_LOG"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"MONGODB_ENABLE_DIRECTORY_PER_DB"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"MONGODB_ENABLE_IPV6"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"MONGODB_ENABLE_JOURNAL"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"MONGODB_PORT_NUMBER"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"MONGODB_ROOT_PASSWORD"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef: {}
+                  k:{"name":"MONGODB_ROOT_USER"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"MONGODB_SYSTEM_LOG_VERBOSITY"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:livenessProbe:
+                  .: {}
+                  f:exec:
+                    .: {}
+                    f:command: {}
+                  f:failureThreshold: {}
+                  f:initialDelaySeconds: {}
+                  f:periodSeconds: {}
+                  f:successThreshold: {}
+                  f:timeoutSeconds: {}
+                f:name: {}
+                f:ports:
+                  .: {}
+                  k:{"containerPort":27017,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:name: {}
+                    f:protocol: {}
+                f:readinessProbe:
+                  .: {}
+                  f:exec:
+                    .: {}
+                    f:command: {}
+                  f:failureThreshold: {}
+                  f:initialDelaySeconds: {}
+                  f:periodSeconds: {}
+                  f:successThreshold: {}
+                  f:timeoutSeconds: {}
+                f:resources:
+                  .: {}
+                  f:limits:
+                    .: {}
+                    f:cpu: {}
+                    f:ephemeral-storage: {}
+                    f:memory: {}
+                  f:requests:
+                    .: {}
+                    f:cpu: {}
+                    f:ephemeral-storage: {}
+                    f:memory: {}
+                f:securityContext:
+                  .: {}
+                  f:allowPrivilegeEscalation: {}
+                  f:capabilities:
+                    .: {}
+                    f:drop: {}
+                  f:privileged: {}
+                  f:readOnlyRootFilesystem: {}
+                  f:runAsGroup: {}
+                  f:runAsNonRoot: {}
+                  f:runAsUser: {}
+                  f:seLinuxOptions: {}
+                  f:seccompProfile:
+                    .: {}
+                    f:type: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+                f:volumeMounts:
+                  .: {}
+                  k:{"mountPath":"/.mongodb"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                    f:subPath: {}
+                  k:{"mountPath":"/bitnami/mongodb"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                  k:{"mountPath":"/bitnami/scripts"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                  k:{"mountPath":"/opt/bitnami/mongodb/conf"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                    f:subPath: {}
+                  k:{"mountPath":"/opt/bitnami/mongodb/logs"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                    f:subPath: {}
+                  k:{"mountPath":"/opt/bitnami/mongodb/tmp"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                    f:subPath: {}
+                  k:{"mountPath":"/tmp"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                    f:subPath: {}
+            f:dnsPolicy: {}
+            f:enableServiceLinks: {}
+            f:initContainers:
+              .: {}
+              k:{"name":"log-dir"}:
+                .: {}
+                f:args: {}
+                f:command: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:name: {}
+                f:resources:
+                  .: {}
+                  f:limits:
+                    .: {}
+                    f:cpu: {}
+                    f:ephemeral-storage: {}
+                    f:memory: {}
+                  f:requests:
+                    .: {}
+                    f:cpu: {}
+                    f:ephemeral-storage: {}
+                    f:memory: {}
+                f:securityContext:
+                  .: {}
+                  f:allowPrivilegeEscalation: {}
+                  f:capabilities:
+                    .: {}
+                    f:drop: {}
+                  f:privileged: {}
+                  f:readOnlyRootFilesystem: {}
+                  f:runAsGroup: {}
+                  f:runAsNonRoot: {}
+                  f:runAsUser: {}
+                  f:seLinuxOptions: {}
+                  f:seccompProfile:
+                    .: {}
+                    f:type: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+                f:volumeMounts:
+                  .: {}
+                  k:{"mountPath":"/opt/bitnami/mongodb/logs"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                    f:subPath: {}
+            f:restartPolicy: {}
+            f:schedulerName: {}
+            f:securityContext:
+              .: {}
+              f:fsGroup: {}
+              f:fsGroupChangePolicy: {}
+            f:serviceAccount: {}
+            f:serviceAccountName: {}
+            f:terminationGracePeriodSeconds: {}
+            f:volumes:
+              .: {}
+              k:{"name":"common-scripts"}:
+                .: {}
+                f:configMap:
+                  .: {}
+                  f:defaultMode: {}
+                  f:name: {}
+                f:name: {}
+              k:{"name":"datadir"}:
+                .: {}
+                f:name: {}
+                f:persistentVolumeClaim:
+                  .: {}
+                  f:claimName: {}
+              k:{"name":"empty-dir"}:
+                .: {}
+                f:emptyDir: {}
+                f:name: {}
+    manager: helm
+    operation: Update
+    subresource: null
+    time: '2024-11-24T17:03:54+00:00'
+  - api_version: apps/v1
+    fields_type: FieldsV1
+    fields_v1:
+      f:metadata:
+        f:annotations:
+          f:deployment.kubernetes.io/revision: {}
+      f:status:
+        f:availableReplicas: {}
+        f:conditions:
+          .: {}
+          k:{"type":"Available"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Progressing"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+        f:observedGeneration: {}
+        f:readyReplicas: {}
+        f:replicas: {}
+        f:updatedReplicas: {}
+    manager: kube-controller-manager
+    operation: Update
+    subresource: status
+    time: '2024-11-28T19:43:01+00:00'
+  name: my-mongodb
+  namespace: default
+  owner_references: null
+  resource_version: '889569'
+  self_link: null
+  uid: b69b9958-8b0d-427b-b045-65f7dfb78eb0
+spec:
+  min_ready_seconds: null
+  paused: null
+  progress_deadline_seconds: 600
+  replicas: 1
+  revision_history_limit: 10
+  selector:
+    match_expressions: null
+    match_labels:
+      app.kubernetes.io/component: mongodb
+      app.kubernetes.io/instance: my-mongodb
+      app.kubernetes.io/name: mongodb
+  strategy:
+    rolling_update:
+      max_surge: 25%
+      max_unavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations: null
+      creation_timestamp: null
+      deletion_grace_period_seconds: null
+      deletion_timestamp: null
+      finalizers: null
+      generate_name: null
+      generation: null
+      labels:
+        app.kubernetes.io/component: mongodb
+        app.kubernetes.io/instance: my-mongodb
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: mongodb
+        app.kubernetes.io/version: 8.0.3
+        helm.sh/chart: mongodb-16.3.0
+      managed_fields: null
+      name: null
+      namespace: null
+      owner_references: null
+      resource_version: null
+      self_link: null
+      uid: null
+    spec:
+      active_deadline_seconds: null
+      affinity:
+        node_affinity: null
+        pod_affinity: null
+        pod_anti_affinity:
+          preferred_during_scheduling_ignored_during_execution:
+          - pod_affinity_term:
+              label_selector:
+                match_expressions: null
+                match_labels:
+                  app.kubernetes.io/component: mongodb
+                  app.kubernetes.io/instance: my-mongodb
+                  app.kubernetes.io/name: mongodb
+              match_label_keys: null
+              mismatch_label_keys: null
+              namespace_selector: null
+              namespaces: null
+              topology_key: kubernetes.io/hostname
+            weight: 1
+          required_during_scheduling_ignored_during_execution: null
+      automount_service_account_token: false
+      containers:
+      - args: null
+        command: null
+        env:
+        - name: BITNAMI_DEBUG
+          value: 'false'
+          value_from: null
+        - name: MONGODB_ROOT_USER
+          value: root
+          value_from: null
+        - name: MONGODB_ROOT_PASSWORD
+          value: null
+          value_from:
+            config_map_key_ref: null
+            field_ref: null
+            resource_field_ref: null
+            secret_key_ref:
+              key: mongodb-root-password
+              name: my-mongodb
+              optional: null
+        - name: ALLOW_EMPTY_PASSWORD
+          value: 'no'
+          value_from: null
+        - name: MONGODB_SYSTEM_LOG_VERBOSITY
+          value: '0'
+          value_from: null
+        - name: MONGODB_DISABLE_SYSTEM_LOG
+          value: 'no'
+          value_from: null
+        - name: MONGODB_DISABLE_JAVASCRIPT
+          value: 'no'
+          value_from: null
+        - name: MONGODB_ENABLE_JOURNAL
+          value: 'yes'
+          value_from: null
+        - name: MONGODB_PORT_NUMBER
+          value: '27017'
+          value_from: null
+        - name: MONGODB_ENABLE_IPV6
+          value: 'no'
+          value_from: null
+        - name: MONGODB_ENABLE_DIRECTORY_PER_DB
+          value: 'no'
+          value_from: null
+        env_from: null
+        image: docker.io/bitnami/mongodb:8.0.3-debian-12-r0
+        image_pull_policy: IfNotPresent
+        lifecycle: null
+        liveness_probe:
+          _exec:
+            command:
+            - /bitnami/scripts/ping-mongodb.sh
+          failure_threshold: 6
+          grpc: null
+          http_get: null
+          initial_delay_seconds: 30
+          period_seconds: 20
+          success_threshold: 1
+          tcp_socket: null
+          termination_grace_period_seconds: null
+          timeout_seconds: 10
+        name: mongodb
+        ports:
+        - container_port: 27017
+          host_ip: null
+          host_port: null
+          name: mongodb
+          protocol: TCP
+        readiness_probe:
+          _exec:
+            command:
+            - /bitnami/scripts/readiness-probe.sh
+          failure_threshold: 6
+          grpc: null
+          http_get: null
+          initial_delay_seconds: 5
+          period_seconds: 10
+          success_threshold: 1
+          tcp_socket: null
+          termination_grace_period_seconds: null
+          timeout_seconds: 5
+        resize_policy: null
+        resources:
+          claims: null
+          limits:
+            cpu: 750m
+            ephemeral-storage: 2Gi
+            memory: 768Mi
+          requests:
+            cpu: 500m
+            ephemeral-storage: 50Mi
+            memory: 512Mi
+        restart_policy: null
+        security_context:
+          allow_privilege_escalation: false
+          app_armor_profile: null
+          capabilities:
+            add: null
+            drop:
+            - ALL
+          privileged: false
+          proc_mount: null
+          read_only_root_filesystem: true
+          run_as_group: 1001
+          run_as_non_root: true
+          run_as_user: 1001
+          se_linux_options:
+            level: null
+            role: null
+            type: null
+            user: null
+          seccomp_profile:
+            localhost_profile: null
+            type: RuntimeDefault
+          windows_options: null
+        startup_probe: null
+        stdin: null
+        stdin_once: null
+        termination_message_path: /dev/termination-log
+        termination_message_policy: File
+        tty: null
+        volume_devices: null
+        volume_mounts:
+        - mount_path: /tmp
+          mount_propagation: null
+          name: empty-dir
+          read_only: null
+          recursive_read_only: null
+          sub_path: tmp-dir
+          sub_path_expr: null
+        - mount_path: /opt/bitnami/mongodb/conf
+          mount_propagation: null
+          name: empty-dir
+          read_only: null
+          recursive_read_only: null
+          sub_path: app-conf-dir
+          sub_path_expr: null
+        - mount_path: /opt/bitnami/mongodb/tmp
+          mount_propagation: null
+          name: empty-dir
+          read_only: null
+          recursive_read_only: null
+          sub_path: app-tmp-dir
+          sub_path_expr: null
+        - mount_path: /opt/bitnami/mongodb/logs
+          mount_propagation: null
+          name: empty-dir
+          read_only: null
+          recursive_read_only: null
+          sub_path: app-logs-dir
+          sub_path_expr: null
+        - mount_path: /.mongodb
+          mount_propagation: null
+          name: empty-dir
+          read_only: null
+          recursive_read_only: null
+          sub_path: mongosh-home
+          sub_path_expr: null
+        - mount_path: /bitnami/mongodb
+          mount_propagation: null
+          name: datadir
+          read_only: null
+          recursive_read_only: null
+          sub_path: null
+          sub_path_expr: null
+        - mount_path: /bitnami/scripts
+          mount_propagation: null
+          name: common-scripts
+          read_only: null
+          recursive_read_only: null
+          sub_path: null
+          sub_path_expr: null
+        working_dir: null
+      dns_config: null
+      dns_policy: ClusterFirst
+      enable_service_links: true
+      ephemeral_containers: null
+      host_aliases: null
+      host_ipc: null
+      host_network: null
+      host_pid: null
+      host_users: null
+      hostname: null
+      image_pull_secrets: null
+      init_containers:
+      - args:
+        - -ec
+        - 'ln -sf /dev/stdout "/opt/bitnami/mongodb/logs/mongodb.log"
+
+          '
+        command:
+        - /bin/bash
+        env: null
+        env_from: null
+        image: docker.io/bitnami/mongodb:8.0.3-debian-12-r0
+        image_pull_policy: IfNotPresent
+        lifecycle: null
+        liveness_probe: null
+        name: log-dir
+        ports: null
+        readiness_probe: null
+        resize_policy: null
+        resources:
+          claims: null
+          limits:
+            cpu: 750m
+            ephemeral-storage: 2Gi
+            memory: 768Mi
+          requests:
+            cpu: 500m
+            ephemeral-storage: 50Mi
+            memory: 512Mi
+        restart_policy: null
+        security_context:
+          allow_privilege_escalation: false
+          app_armor_profile: null
+          capabilities:
+            add: null
+            drop:
+            - ALL
+          privileged: false
+          proc_mount: null
+          read_only_root_filesystem: true
+          run_as_group: 1001
+          run_as_non_root: true
+          run_as_user: 1001
+          se_linux_options:
+            level: null
+            role: null
+            type: null
+            user: null
+          seccomp_profile:
+            localhost_profile: null
+            type: RuntimeDefault
+          windows_options: null
+        startup_probe: null
+        stdin: null
+        stdin_once: null
+        termination_message_path: /dev/termination-log
+        termination_message_policy: File
+        tty: null
+        volume_devices: null
+        volume_mounts:
+        - mount_path: /opt/bitnami/mongodb/logs
+          mount_propagation: null
+          name: empty-dir
+          read_only: null
+          recursive_read_only: null
+          sub_path: app-logs-dir
+          sub_path_expr: null
+        working_dir: null
+      node_name: null
+      node_selector: null
+      os: null
+      overhead: null
+      preemption_policy: null
+      priority: null
+      priority_class_name: null
+      readiness_gates: null
+      resource_claims: null
+      restart_policy: Always
+      runtime_class_name: null
+      scheduler_name: default-scheduler
+      scheduling_gates: null
+      security_context:
+        app_armor_profile: null
+        fs_group: 1001
+        fs_group_change_policy: Always
+        run_as_group: null
+        run_as_non_root: null
+        run_as_user: null
+        se_linux_options: null
+        seccomp_profile: null
+        supplemental_groups: null
+        supplemental_groups_policy: null
+        sysctls: null
+        windows_options: null
+      service_account: my-mongodb
+      service_account_name: my-mongodb
+      set_hostname_as_fqdn: null
+      share_process_namespace: null
+      subdomain: null
+      termination_grace_period_seconds: 30
+      tolerations: null
+      topology_spread_constraints: null
+      volumes:
+      - aws_elastic_block_store: null
+        azure_disk: null
+        azure_file: null
+        cephfs: null
+        cinder: null
+        config_map: null
+        csi: null
+        downward_api: null
+        empty_dir:
+          medium: null
+          size_limit: null
+        ephemeral: null
+        fc: null
+        flex_volume: null
+        flocker: null
+        gce_persistent_disk: null
+        git_repo: null
+        glusterfs: null
+        host_path: null
+        image: null
+        iscsi: null
+        name: empty-dir
+        nfs: null
+        persistent_volume_claim: null
+        photon_persistent_disk: null
+        portworx_volume: null
+        projected: null
+        quobyte: null
+        rbd: null
+        scale_io: null
+        secret: null
+        storageos: null
+        vsphere_volume: null
+      - aws_elastic_block_store: null
+        azure_disk: null
+        azure_file: null
+        cephfs: null
+        cinder: null
+        config_map:
+          default_mode: 360
+          items: null
+          name: my-mongodb-common-scripts
+          optional: null
+        csi: null
+        downward_api: null
+        empty_dir: null
+        ephemeral: null
+        fc: null
+        flex_volume: null
+        flocker: null
+        gce_persistent_disk: null
+        git_repo: null
+        glusterfs: null
+        host_path: null
+        image: null
+        iscsi: null
+        name: common-scripts
+        nfs: null
+        persistent_volume_claim: null
+        photon_persistent_disk: null
+        portworx_volume: null
+        projected: null
+        quobyte: null
+        rbd: null
+        scale_io: null
+        secret: null
+        storageos: null
+        vsphere_volume: null
+      - aws_elastic_block_store: null
+        azure_disk: null
+        azure_file: null
+        cephfs: null
+        cinder: null
+        config_map: null
+        csi: null
+        downward_api: null
+        empty_dir: null
+        ephemeral: null
+        fc: null
+        flex_volume: null
+        flocker: null
+        gce_persistent_disk: null
+        git_repo: null
+        glusterfs: null
+        host_path: null
+        image: null
+        iscsi: null
+        name: datadir
+        nfs: null
+        persistent_volume_claim:
+          claim_name: my-mongodb
+          read_only: null
+        photon_persistent_disk: null
+        portworx_volume: null
+        projected: null
+        quobyte: null
+        rbd: null
+        scale_io: null
+        secret: null
+        storageos: null
+        vsphere_volume: null
+status:
+  available_replicas: 1
+  collision_count: null
+  conditions:
+  - last_transition_time: '2024-11-24T17:03:54+00:00'
+    last_update_time: '2024-11-24T17:05:08+00:00'
+    message: ReplicaSet "my-mongodb-7dfcd85f7d" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: 'True'
+    type: Progressing
+  - last_transition_time: '2024-11-28T19:43:01+00:00'
+    last_update_time: '2024-11-28T19:43:01+00:00'
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: 'True'
+    type: Available
+  observed_generation: 1
+  ready_replicas: 1
+  replicas: 1
+  unavailable_replicas: null
+  updated_replicas: 1
