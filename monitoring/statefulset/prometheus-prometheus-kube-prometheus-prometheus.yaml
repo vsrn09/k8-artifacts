@@ -1,0 +1,1001 @@
+api_version: apps/v1
+kind: StatefulSet
+metadata:
+  annotations:
+    meta.helm.sh/release-name: prometheus
+    meta.helm.sh/release-namespace: monitoring
+    prometheus-operator-input-hash: '234717366619046939'
+  creation_timestamp: '2024-09-25T19:00:23+00:00'
+  deletion_grace_period_seconds: null
+  deletion_timestamp: null
+  finalizers: null
+  generate_name: null
+  generation: 5
+  labels:
+    app: kube-prometheus-stack-prometheus
+    app.kubernetes.io/instance: prometheus
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: kube-prometheus-stack
+    app.kubernetes.io/version: 62.7.0
+    chart: kube-prometheus-stack-62.7.0
+    heritage: Helm
+    managed-by: prometheus-operator
+    operator.prometheus.io/mode: server
+    operator.prometheus.io/name: prometheus-kube-prometheus-prometheus
+    operator.prometheus.io/shard: '0'
+    release: prometheus
+  managed_fields:
+  - api_version: apps/v1
+    fields_type: FieldsV1
+    fields_v1:
+      f:spec:
+        f:template:
+          f:metadata:
+            f:annotations:
+              f:kubectl.kubernetes.io/restartedAt: {}
+    manager: kubectl-rollout
+    operation: Update
+    subresource: null
+    time: '2024-10-08T21:23:26+00:00'
+  - api_version: apps/v1
+    fields_type: FieldsV1
+    fields_v1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:meta.helm.sh/release-name: {}
+          f:meta.helm.sh/release-namespace: {}
+          f:prometheus-operator-input-hash: {}
+        f:labels:
+          .: {}
+          f:app: {}
+          f:app.kubernetes.io/instance: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:app.kubernetes.io/part-of: {}
+          f:app.kubernetes.io/version: {}
+          f:chart: {}
+          f:heritage: {}
+          f:managed-by: {}
+          f:operator.prometheus.io/mode: {}
+          f:operator.prometheus.io/name: {}
+          f:operator.prometheus.io/shard: {}
+          f:release: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"91c0f1d1-f537-4e21-be4f-f87bbc503d9c"}: {}
+      f:spec:
+        f:persistentVolumeClaimRetentionPolicy:
+          .: {}
+          f:whenDeleted: {}
+          f:whenScaled: {}
+        f:podManagementPolicy: {}
+        f:revisionHistoryLimit: {}
+        f:selector: {}
+        f:serviceName: {}
+        f:template:
+          f:metadata:
+            f:annotations:
+              .: {}
+              f:kubectl.kubernetes.io/default-container: {}
+            f:labels:
+              .: {}
+              f:app.kubernetes.io/instance: {}
+              f:app.kubernetes.io/managed-by: {}
+              f:app.kubernetes.io/name: {}
+              f:app.kubernetes.io/version: {}
+              f:operator.prometheus.io/name: {}
+              f:operator.prometheus.io/shard: {}
+              f:prometheus: {}
+          f:spec:
+            f:automountServiceAccountToken: {}
+            f:containers:
+              k:{"name":"config-reloader"}:
+                .: {}
+                f:args: {}
+                f:command: {}
+                f:env:
+                  .: {}
+                  k:{"name":"POD_NAME"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:fieldRef: {}
+                  k:{"name":"SHARD"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:name: {}
+                f:ports:
+                  .: {}
+                  k:{"containerPort":8080,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:name: {}
+                    f:protocol: {}
+                f:resources: {}
+                f:securityContext:
+                  .: {}
+                  f:allowPrivilegeEscalation: {}
+                  f:capabilities:
+                    .: {}
+                    f:drop: {}
+                  f:readOnlyRootFilesystem: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+                f:volumeMounts:
+                  .: {}
+                  k:{"mountPath":"/etc/prometheus/config"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                  k:{"mountPath":"/etc/prometheus/config_out"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                  k:{"mountPath":"/etc/prometheus/rules/prometheus-prometheus-kube-prometheus-prometheus-rulefiles-0"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+              k:{"name":"prometheus"}:
+                .: {}
+                f:args: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:livenessProbe:
+                  .: {}
+                  f:failureThreshold: {}
+                  f:httpGet:
+                    .: {}
+                    f:path: {}
+                    f:port: {}
+                    f:scheme: {}
+                  f:periodSeconds: {}
+                  f:successThreshold: {}
+                  f:timeoutSeconds: {}
+                f:name: {}
+                f:ports:
+                  .: {}
+                  k:{"containerPort":9090,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:name: {}
+                    f:protocol: {}
+                f:readinessProbe:
+                  .: {}
+                  f:failureThreshold: {}
+                  f:httpGet:
+                    .: {}
+                    f:path: {}
+                    f:port: {}
+                    f:scheme: {}
+                  f:periodSeconds: {}
+                  f:successThreshold: {}
+                  f:timeoutSeconds: {}
+                f:resources: {}
+                f:securityContext:
+                  .: {}
+                  f:allowPrivilegeEscalation: {}
+                  f:capabilities:
+                    .: {}
+                    f:drop: {}
+                  f:readOnlyRootFilesystem: {}
+                f:startupProbe:
+                  .: {}
+                  f:failureThreshold: {}
+                  f:httpGet:
+                    .: {}
+                    f:path: {}
+                    f:port: {}
+                    f:scheme: {}
+                  f:periodSeconds: {}
+                  f:successThreshold: {}
+                  f:timeoutSeconds: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+                f:volumeMounts:
+                  .: {}
+                  k:{"mountPath":"/etc/prometheus/certs"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                    f:readOnly: {}
+                  k:{"mountPath":"/etc/prometheus/config_out"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                    f:readOnly: {}
+                  k:{"mountPath":"/etc/prometheus/rules/prometheus-prometheus-kube-prometheus-prometheus-rulefiles-0"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                  k:{"mountPath":"/etc/prometheus/web_config/web-config.yaml"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                    f:readOnly: {}
+                    f:subPath: {}
+                  k:{"mountPath":"/prometheus"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+            f:dnsPolicy: {}
+            f:initContainers:
+              .: {}
+              k:{"name":"init-config-reloader"}:
+                .: {}
+                f:args: {}
+                f:command: {}
+                f:env:
+                  .: {}
+                  k:{"name":"POD_NAME"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:fieldRef: {}
+                  k:{"name":"SHARD"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:name: {}
+                f:ports:
+                  .: {}
+                  k:{"containerPort":8081,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:name: {}
+                    f:protocol: {}
+                f:resources: {}
+                f:securityContext:
+                  .: {}
+                  f:allowPrivilegeEscalation: {}
+                  f:capabilities:
+                    .: {}
+                    f:drop: {}
+                  f:readOnlyRootFilesystem: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+                f:volumeMounts:
+                  .: {}
+                  k:{"mountPath":"/etc/prometheus/config"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                  k:{"mountPath":"/etc/prometheus/config_out"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                  k:{"mountPath":"/etc/prometheus/rules/prometheus-prometheus-kube-prometheus-prometheus-rulefiles-0"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+            f:restartPolicy: {}
+            f:schedulerName: {}
+            f:securityContext:
+              .: {}
+              f:fsGroup: {}
+              f:runAsGroup: {}
+              f:runAsNonRoot: {}
+              f:runAsUser: {}
+              f:seccompProfile:
+                .: {}
+                f:type: {}
+            f:serviceAccount: {}
+            f:serviceAccountName: {}
+            f:shareProcessNamespace: {}
+            f:terminationGracePeriodSeconds: {}
+            f:volumes:
+              .: {}
+              k:{"name":"config"}:
+                .: {}
+                f:name: {}
+                f:secret:
+                  .: {}
+                  f:defaultMode: {}
+                  f:secretName: {}
+              k:{"name":"config-out"}:
+                .: {}
+                f:emptyDir:
+                  .: {}
+                  f:medium: {}
+                f:name: {}
+              k:{"name":"prometheus-prometheus-kube-prometheus-prometheus-db"}:
+                .: {}
+                f:emptyDir: {}
+                f:name: {}
+              k:{"name":"prometheus-prometheus-kube-prometheus-prometheus-rulefiles-0"}:
+                .: {}
+                f:configMap:
+                  .: {}
+                  f:defaultMode: {}
+                  f:name: {}
+                f:name: {}
+              k:{"name":"tls-assets"}:
+                .: {}
+                f:name: {}
+                f:projected:
+                  .: {}
+                  f:defaultMode: {}
+                  f:sources: {}
+              k:{"name":"web-config"}:
+                .: {}
+                f:name: {}
+                f:secret:
+                  .: {}
+                  f:defaultMode: {}
+                  f:secretName: {}
+        f:updateStrategy:
+          f:type: {}
+    manager: PrometheusOperator
+    operation: Update
+    subresource: null
+    time: '2024-11-02T03:26:16+00:00'
+  - api_version: apps/v1
+    fields_type: FieldsV1
+    fields_v1:
+      f:status:
+        f:availableReplicas: {}
+        f:collisionCount: {}
+        f:currentReplicas: {}
+        f:currentRevision: {}
+        f:observedGeneration: {}
+        f:readyReplicas: {}
+        f:replicas: {}
+        f:updateRevision: {}
+        f:updatedReplicas: {}
+    manager: kube-controller-manager
+    operation: Update
+    subresource: status
+    time: '2024-11-22T15:46:54+00:00'
+  name: prometheus-prometheus-kube-prometheus-prometheus
+  namespace: monitoring
+  owner_references:
+  - api_version: monitoring.coreos.com/v1
+    block_owner_deletion: true
+    controller: true
+    kind: Prometheus
+    name: prometheus-kube-prometheus-prometheus
+    uid: 91c0f1d1-f537-4e21-be4f-f87bbc503d9c
+  resource_version: '17663565'
+  self_link: null
+  uid: 7da55f07-0ef0-46a8-bdae-8594d9e2e605
+spec:
+  min_ready_seconds: null
+  ordinals: null
+  persistent_volume_claim_retention_policy:
+    when_deleted: Retain
+    when_scaled: Retain
+  pod_management_policy: Parallel
+  replicas: 1
+  revision_history_limit: 10
+  selector:
+    match_expressions: null
+    match_labels:
+      app.kubernetes.io/instance: prometheus-kube-prometheus-prometheus
+      app.kubernetes.io/managed-by: prometheus-operator
+      app.kubernetes.io/name: prometheus
+      operator.prometheus.io/name: prometheus-kube-prometheus-prometheus
+      operator.prometheus.io/shard: '0'
+      prometheus: prometheus-kube-prometheus-prometheus
+  service_name: prometheus-operated
+  template:
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/default-container: prometheus
+        kubectl.kubernetes.io/restartedAt: '2024-10-08T16:23:26-05:00'
+      creation_timestamp: null
+      deletion_grace_period_seconds: null
+      deletion_timestamp: null
+      finalizers: null
+      generate_name: null
+      generation: null
+      labels:
+        app.kubernetes.io/instance: prometheus-kube-prometheus-prometheus
+        app.kubernetes.io/managed-by: prometheus-operator
+        app.kubernetes.io/name: prometheus
+        app.kubernetes.io/version: 2.54.1
+        operator.prometheus.io/name: prometheus-kube-prometheus-prometheus
+        operator.prometheus.io/shard: '0'
+        prometheus: prometheus-kube-prometheus-prometheus
+      managed_fields: null
+      name: null
+      namespace: null
+      owner_references: null
+      resource_version: null
+      self_link: null
+      uid: null
+    spec:
+      active_deadline_seconds: null
+      affinity: null
+      automount_service_account_token: true
+      containers:
+      - args:
+        - --web.console.templates=/etc/prometheus/consoles
+        - --web.console.libraries=/etc/prometheus/console_libraries
+        - --config.file=/etc/prometheus/config_out/prometheus.env.yaml
+        - --web.enable-lifecycle
+        - --web.external-url=http://prometheus-kube-prometheus-prometheus.monitoring:9090
+        - --web.route-prefix=/
+        - --storage.tsdb.retention.time=10d
+        - --storage.tsdb.path=/prometheus
+        - --storage.tsdb.wal-compression
+        - --web.config.file=/etc/prometheus/web_config/web-config.yaml
+        command: null
+        env: null
+        env_from: null
+        image: quay.io/prometheus/prometheus:v2.54.1
+        image_pull_policy: IfNotPresent
+        lifecycle: null
+        liveness_probe:
+          _exec: null
+          failure_threshold: 6
+          grpc: null
+          http_get:
+            host: null
+            http_headers: null
+            path: /-/healthy
+            port: http-web
+            scheme: HTTP
+          initial_delay_seconds: null
+          period_seconds: 5
+          success_threshold: 1
+          tcp_socket: null
+          termination_grace_period_seconds: null
+          timeout_seconds: 3
+        name: prometheus
+        ports:
+        - container_port: 9090
+          host_ip: null
+          host_port: null
+          name: http-web
+          protocol: TCP
+        readiness_probe:
+          _exec: null
+          failure_threshold: 3
+          grpc: null
+          http_get:
+            host: null
+            http_headers: null
+            path: /-/ready
+            port: http-web
+            scheme: HTTP
+          initial_delay_seconds: null
+          period_seconds: 5
+          success_threshold: 1
+          tcp_socket: null
+          termination_grace_period_seconds: null
+          timeout_seconds: 3
+        resize_policy: null
+        resources:
+          claims: null
+          limits: null
+          requests: null
+        restart_policy: null
+        security_context:
+          allow_privilege_escalation: false
+          app_armor_profile: null
+          capabilities:
+            add: null
+            drop:
+            - ALL
+          privileged: null
+          proc_mount: null
+          read_only_root_filesystem: true
+          run_as_group: null
+          run_as_non_root: null
+          run_as_user: null
+          se_linux_options: null
+          seccomp_profile: null
+          windows_options: null
+        startup_probe:
+          _exec: null
+          failure_threshold: 60
+          grpc: null
+          http_get:
+            host: null
+            http_headers: null
+            path: /-/ready
+            port: http-web
+            scheme: HTTP
+          initial_delay_seconds: null
+          period_seconds: 15
+          success_threshold: 1
+          tcp_socket: null
+          termination_grace_period_seconds: null
+          timeout_seconds: 3
+        stdin: null
+        stdin_once: null
+        termination_message_path: /dev/termination-log
+        termination_message_policy: FallbackToLogsOnError
+        tty: null
+        volume_devices: null
+        volume_mounts:
+        - mount_path: /etc/prometheus/config_out
+          mount_propagation: null
+          name: config-out
+          read_only: true
+          recursive_read_only: null
+          sub_path: null
+          sub_path_expr: null
+        - mount_path: /etc/prometheus/certs
+          mount_propagation: null
+          name: tls-assets
+          read_only: true
+          recursive_read_only: null
+          sub_path: null
+          sub_path_expr: null
+        - mount_path: /prometheus
+          mount_propagation: null
+          name: prometheus-prometheus-kube-prometheus-prometheus-db
+          read_only: null
+          recursive_read_only: null
+          sub_path: null
+          sub_path_expr: null
+        - mount_path: /etc/prometheus/rules/prometheus-prometheus-kube-prometheus-prometheus-rulefiles-0
+          mount_propagation: null
+          name: prometheus-prometheus-kube-prometheus-prometheus-rulefiles-0
+          read_only: null
+          recursive_read_only: null
+          sub_path: null
+          sub_path_expr: null
+        - mount_path: /etc/prometheus/web_config/web-config.yaml
+          mount_propagation: null
+          name: web-config
+          read_only: true
+          recursive_read_only: null
+          sub_path: web-config.yaml
+          sub_path_expr: null
+        working_dir: null
+      - args:
+        - --listen-address=:8080
+        - --reload-url=http://127.0.0.1:9090/-/reload
+        - --config-file=/etc/prometheus/config/prometheus.yaml.gz
+        - --config-envsubst-file=/etc/prometheus/config_out/prometheus.env.yaml
+        - --watched-dir=/etc/prometheus/rules/prometheus-prometheus-kube-prometheus-prometheus-rulefiles-0
+        command:
+        - /bin/prometheus-config-reloader
+        env:
+        - name: POD_NAME
+          value: null
+          value_from:
+            config_map_key_ref: null
+            field_ref:
+              api_version: v1
+              field_path: metadata.name
+            resource_field_ref: null
+            secret_key_ref: null
+        - name: SHARD
+          value: '0'
+          value_from: null
+        env_from: null
+        image: quay.io/prometheus-operator/prometheus-config-reloader:v0.76.1
+        image_pull_policy: IfNotPresent
+        lifecycle: null
+        liveness_probe: null
+        name: config-reloader
+        ports:
+        - container_port: 8080
+          host_ip: null
+          host_port: null
+          name: reloader-web
+          protocol: TCP
+        readiness_probe: null
+        resize_policy: null
+        resources:
+          claims: null
+          limits: null
+          requests: null
+        restart_policy: null
+        security_context:
+          allow_privilege_escalation: false
+          app_armor_profile: null
+          capabilities:
+            add: null
+            drop:
+            - ALL
+          privileged: null
+          proc_mount: null
+          read_only_root_filesystem: true
+          run_as_group: null
+          run_as_non_root: null
+          run_as_user: null
+          se_linux_options: null
+          seccomp_profile: null
+          windows_options: null
+        startup_probe: null
+        stdin: null
+        stdin_once: null
+        termination_message_path: /dev/termination-log
+        termination_message_policy: FallbackToLogsOnError
+        tty: null
+        volume_devices: null
+        volume_mounts:
+        - mount_path: /etc/prometheus/config
+          mount_propagation: null
+          name: config
+          read_only: null
+          recursive_read_only: null
+          sub_path: null
+          sub_path_expr: null
+        - mount_path: /etc/prometheus/config_out
+          mount_propagation: null
+          name: config-out
+          read_only: null
+          recursive_read_only: null
+          sub_path: null
+          sub_path_expr: null
+        - mount_path: /etc/prometheus/rules/prometheus-prometheus-kube-prometheus-prometheus-rulefiles-0
+          mount_propagation: null
+          name: prometheus-prometheus-kube-prometheus-prometheus-rulefiles-0
+          read_only: null
+          recursive_read_only: null
+          sub_path: null
+          sub_path_expr: null
+        working_dir: null
+      dns_config: null
+      dns_policy: ClusterFirst
+      enable_service_links: null
+      ephemeral_containers: null
+      host_aliases: null
+      host_ipc: null
+      host_network: null
+      host_pid: null
+      host_users: null
+      hostname: null
+      image_pull_secrets: null
+      init_containers:
+      - args:
+        - --watch-interval=0
+        - --listen-address=:8081
+        - --config-file=/etc/prometheus/config/prometheus.yaml.gz
+        - --config-envsubst-file=/etc/prometheus/config_out/prometheus.env.yaml
+        - --watched-dir=/etc/prometheus/rules/prometheus-prometheus-kube-prometheus-prometheus-rulefiles-0
+        command:
+        - /bin/prometheus-config-reloader
+        env:
+        - name: POD_NAME
+          value: null
+          value_from:
+            config_map_key_ref: null
+            field_ref:
+              api_version: v1
+              field_path: metadata.name
+            resource_field_ref: null
+            secret_key_ref: null
+        - name: SHARD
+          value: '0'
+          value_from: null
+        env_from: null
+        image: quay.io/prometheus-operator/prometheus-config-reloader:v0.76.1
+        image_pull_policy: IfNotPresent
+        lifecycle: null
+        liveness_probe: null
+        name: init-config-reloader
+        ports:
+        - container_port: 8081
+          host_ip: null
+          host_port: null
+          name: reloader-web
+          protocol: TCP
+        readiness_probe: null
+        resize_policy: null
+        resources:
+          claims: null
+          limits: null
+          requests: null
+        restart_policy: null
+        security_context:
+          allow_privilege_escalation: false
+          app_armor_profile: null
+          capabilities:
+            add: null
+            drop:
+            - ALL
+          privileged: null
+          proc_mount: null
+          read_only_root_filesystem: true
+          run_as_group: null
+          run_as_non_root: null
+          run_as_user: null
+          se_linux_options: null
+          seccomp_profile: null
+          windows_options: null
+        startup_probe: null
+        stdin: null
+        stdin_once: null
+        termination_message_path: /dev/termination-log
+        termination_message_policy: FallbackToLogsOnError
+        tty: null
+        volume_devices: null
+        volume_mounts:
+        - mount_path: /etc/prometheus/config
+          mount_propagation: null
+          name: config
+          read_only: null
+          recursive_read_only: null
+          sub_path: null
+          sub_path_expr: null
+        - mount_path: /etc/prometheus/config_out
+          mount_propagation: null
+          name: config-out
+          read_only: null
+          recursive_read_only: null
+          sub_path: null
+          sub_path_expr: null
+        - mount_path: /etc/prometheus/rules/prometheus-prometheus-kube-prometheus-prometheus-rulefiles-0
+          mount_propagation: null
+          name: prometheus-prometheus-kube-prometheus-prometheus-rulefiles-0
+          read_only: null
+          recursive_read_only: null
+          sub_path: null
+          sub_path_expr: null
+        working_dir: null
+      node_name: null
+      node_selector: null
+      os: null
+      overhead: null
+      preemption_policy: null
+      priority: null
+      priority_class_name: null
+      readiness_gates: null
+      resource_claims: null
+      restart_policy: Always
+      runtime_class_name: null
+      scheduler_name: default-scheduler
+      scheduling_gates: null
+      security_context:
+        app_armor_profile: null
+        fs_group: 2000
+        fs_group_change_policy: null
+        run_as_group: 2000
+        run_as_non_root: true
+        run_as_user: 1000
+        se_linux_options: null
+        seccomp_profile:
+          localhost_profile: null
+          type: RuntimeDefault
+        supplemental_groups: null
+        supplemental_groups_policy: null
+        sysctls: null
+        windows_options: null
+      service_account: prometheus-kube-prometheus-prometheus
+      service_account_name: prometheus-kube-prometheus-prometheus
+      set_hostname_as_fqdn: null
+      share_process_namespace: false
+      subdomain: null
+      termination_grace_period_seconds: 600
+      tolerations: null
+      topology_spread_constraints: null
+      volumes:
+      - aws_elastic_block_store: null
+        azure_disk: null
+        azure_file: null
+        cephfs: null
+        cinder: null
+        config_map: null
+        csi: null
+        downward_api: null
+        empty_dir: null
+        ephemeral: null
+        fc: null
+        flex_volume: null
+        flocker: null
+        gce_persistent_disk: null
+        git_repo: null
+        glusterfs: null
+        host_path: null
+        image: null
+        iscsi: null
+        name: config
+        nfs: null
+        persistent_volume_claim: null
+        photon_persistent_disk: null
+        portworx_volume: null
+        projected: null
+        quobyte: null
+        rbd: null
+        scale_io: null
+        secret:
+          default_mode: 420
+          items: null
+          optional: null
+          secret_name: prometheus-prometheus-kube-prometheus-prometheus
+        storageos: null
+        vsphere_volume: null
+      - aws_elastic_block_store: null
+        azure_disk: null
+        azure_file: null
+        cephfs: null
+        cinder: null
+        config_map: null
+        csi: null
+        downward_api: null
+        empty_dir: null
+        ephemeral: null
+        fc: null
+        flex_volume: null
+        flocker: null
+        gce_persistent_disk: null
+        git_repo: null
+        glusterfs: null
+        host_path: null
+        image: null
+        iscsi: null
+        name: tls-assets
+        nfs: null
+        persistent_volume_claim: null
+        photon_persistent_disk: null
+        portworx_volume: null
+        projected:
+          default_mode: 420
+          sources:
+          - cluster_trust_bundle: null
+            config_map: null
+            downward_api: null
+            secret:
+              items: null
+              name: prometheus-prometheus-kube-prometheus-prometheus-tls-assets-0
+              optional: null
+            service_account_token: null
+        quobyte: null
+        rbd: null
+        scale_io: null
+        secret: null
+        storageos: null
+        vsphere_volume: null
+      - aws_elastic_block_store: null
+        azure_disk: null
+        azure_file: null
+        cephfs: null
+        cinder: null
+        config_map: null
+        csi: null
+        downward_api: null
+        empty_dir:
+          medium: Memory
+          size_limit: null
+        ephemeral: null
+        fc: null
+        flex_volume: null
+        flocker: null
+        gce_persistent_disk: null
+        git_repo: null
+        glusterfs: null
+        host_path: null
+        image: null
+        iscsi: null
+        name: config-out
+        nfs: null
+        persistent_volume_claim: null
+        photon_persistent_disk: null
+        portworx_volume: null
+        projected: null
+        quobyte: null
+        rbd: null
+        scale_io: null
+        secret: null
+        storageos: null
+        vsphere_volume: null
+      - aws_elastic_block_store: null
+        azure_disk: null
+        azure_file: null
+        cephfs: null
+        cinder: null
+        config_map:
+          default_mode: 420
+          items: null
+          name: prometheus-prometheus-kube-prometheus-prometheus-rulefiles-0
+          optional: null
+        csi: null
+        downward_api: null
+        empty_dir: null
+        ephemeral: null
+        fc: null
+        flex_volume: null
+        flocker: null
+        gce_persistent_disk: null
+        git_repo: null
+        glusterfs: null
+        host_path: null
+        image: null
+        iscsi: null
+        name: prometheus-prometheus-kube-prometheus-prometheus-rulefiles-0
+        nfs: null
+        persistent_volume_claim: null
+        photon_persistent_disk: null
+        portworx_volume: null
+        projected: null
+        quobyte: null
+        rbd: null
+        scale_io: null
+        secret: null
+        storageos: null
+        vsphere_volume: null
+      - aws_elastic_block_store: null
+        azure_disk: null
+        azure_file: null
+        cephfs: null
+        cinder: null
+        config_map: null
+        csi: null
+        downward_api: null
+        empty_dir: null
+        ephemeral: null
+        fc: null
+        flex_volume: null
+        flocker: null
+        gce_persistent_disk: null
+        git_repo: null
+        glusterfs: null
+        host_path: null
+        image: null
+        iscsi: null
+        name: web-config
+        nfs: null
+        persistent_volume_claim: null
+        photon_persistent_disk: null
+        portworx_volume: null
+        projected: null
+        quobyte: null
+        rbd: null
+        scale_io: null
+        secret:
+          default_mode: 420
+          items: null
+          optional: null
+          secret_name: prometheus-prometheus-kube-prometheus-prometheus-web-config
+        storageos: null
+        vsphere_volume: null
+      - aws_elastic_block_store: null
+        azure_disk: null
+        azure_file: null
+        cephfs: null
+        cinder: null
+        config_map: null
+        csi: null
+        downward_api: null
+        empty_dir:
+          medium: null
+          size_limit: null
+        ephemeral: null
+        fc: null
+        flex_volume: null
+        flocker: null
+        gce_persistent_disk: null
+        git_repo: null
+        glusterfs: null
+        host_path: null
+        image: null
+        iscsi: null
+        name: prometheus-prometheus-kube-prometheus-prometheus-db
+        nfs: null
+        persistent_volume_claim: null
+        photon_persistent_disk: null
+        portworx_volume: null
+        projected: null
+        quobyte: null
+        rbd: null
+        scale_io: null
+        secret: null
+        storageos: null
+        vsphere_volume: null
+  update_strategy:
+    rolling_update: null
+    type: RollingUpdate
+  volume_claim_templates: null
+status:
+  available_replicas: 1
+  collision_count: 0
+  conditions: null
+  current_replicas: 1
+  current_revision: prometheus-prometheus-kube-prometheus-prometheus-745f79c577
+  observed_generation: 5
+  ready_replicas: 1
+  replicas: 1
+  update_revision: prometheus-prometheus-kube-prometheus-prometheus-745f79c577
+  updated_replicas: 1
