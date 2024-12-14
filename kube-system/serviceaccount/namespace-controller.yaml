@@ -1,0 +1,21 @@
+api_version: v1
+automount_service_account_token: null
+image_pull_secrets: null
+kind: ServiceAccount
+metadata:
+  annotations: null
+  creation_timestamp: '2024-12-11T15:16:41+00:00'
+  deletion_grace_period_seconds: null
+  deletion_timestamp: null
+  finalizers: null
+  generate_name: null
+  generation: null
+  labels: null
+  managed_fields: null
+  name: namespace-controller
+  namespace: kube-system
+  owner_references: null
+  resource_version: '260'
+  self_link: null
+  uid: c319d3e5-c34f-4fbe-aeb6-1a145b46db6e
+secrets: null
