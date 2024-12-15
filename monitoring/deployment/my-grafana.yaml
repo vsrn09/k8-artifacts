@@ -1,0 +1,572 @@
+api_version: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: '1'
+    meta.helm.sh/release-name: my-grafana
+    meta.helm.sh/release-namespace: monitoring
+  creation_timestamp: '2024-12-15T08:13:53+00:00'
+  deletion_grace_period_seconds: null
+  deletion_timestamp: null
+  finalizers: null
+  generate_name: null
+  generation: 1
+  labels:
+    app.kubernetes.io/component: grafana
+    app.kubernetes.io/instance: my-grafana
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/version: 11.3.0
+    helm.sh/chart: grafana-11.4.0
+  managed_fields:
+  - api_version: apps/v1
+    fields_type: FieldsV1
+    fields_v1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:meta.helm.sh/release-name: {}
+          f:meta.helm.sh/release-namespace: {}
+        f:labels:
+          .: {}
+          f:app.kubernetes.io/component: {}
+          f:app.kubernetes.io/instance: {}
+          f:app.kubernetes.io/managed-by: {}
+          f:app.kubernetes.io/name: {}
+          f:app.kubernetes.io/version: {}
+          f:helm.sh/chart: {}
+      f:spec:
+        f:progressDeadlineSeconds: {}
+        f:replicas: {}
+        f:revisionHistoryLimit: {}
+        f:selector: {}
+        f:strategy:
+          f:rollingUpdate:
+            .: {}
+            f:maxSurge: {}
+            f:maxUnavailable: {}
+          f:type: {}
+        f:template:
+          f:metadata:
+            f:annotations:
+              .: {}
+              f:checksum/config: {}
+              f:checksum/dashboard-provider: {}
+              f:checksum/secret: {}
+            f:labels:
+              .: {}
+              f:app.kubernetes.io/component: {}
+              f:app.kubernetes.io/instance: {}
+              f:app.kubernetes.io/managed-by: {}
+              f:app.kubernetes.io/name: {}
+              f:app.kubernetes.io/version: {}
+              f:helm.sh/chart: {}
+          f:spec:
+            f:affinity:
+              .: {}
+              f:podAntiAffinity:
+                .: {}
+                f:preferredDuringSchedulingIgnoredDuringExecution: {}
+            f:automountServiceAccountToken: {}
+            f:containers:
+              k:{"name":"grafana"}:
+                .: {}
+                f:env:
+                  .: {}
+                  k:{"name":"GF_SECURITY_ADMIN_PASSWORD"}:
+                    .: {}
+                    f:name: {}
+                    f:valueFrom:
+                      .: {}
+                      f:secretKeyRef: {}
+                f:envFrom: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:livenessProbe:
+                  .: {}
+                  f:failureThreshold: {}
+                  f:initialDelaySeconds: {}
+                  f:periodSeconds: {}
+                  f:successThreshold: {}
+                  f:tcpSocket:
+                    .: {}
+                    f:port: {}
+                  f:timeoutSeconds: {}
+                f:name: {}
+                f:ports:
+                  .: {}
+                  k:{"containerPort":3000,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:name: {}
+                    f:protocol: {}
+                f:readinessProbe:
+                  .: {}
+                  f:failureThreshold: {}
+                  f:httpGet:
+                    .: {}
+                    f:path: {}
+                    f:port: {}
+                    f:scheme: {}
+                  f:initialDelaySeconds: {}
+                  f:periodSeconds: {}
+                  f:successThreshold: {}
+                  f:timeoutSeconds: {}
+                f:resources:
+                  .: {}
+                  f:limits:
+                    .: {}
+                    f:cpu: {}
+                    f:ephemeral-storage: {}
+                    f:memory: {}
+                  f:requests:
+                    .: {}
+                    f:cpu: {}
+                    f:ephemeral-storage: {}
+                    f:memory: {}
+                f:securityContext:
+                  .: {}
+                  f:allowPrivilegeEscalation: {}
+                  f:capabilities:
+                    .: {}
+                    f:drop: {}
+                  f:privileged: {}
+                  f:readOnlyRootFilesystem: {}
+                  f:runAsGroup: {}
+                  f:runAsNonRoot: {}
+                  f:runAsUser: {}
+                  f:seLinuxOptions: {}
+                  f:seccompProfile:
+                    .: {}
+                    f:type: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+                f:volumeMounts:
+                  .: {}
+                  k:{"mountPath":"/bitnami/grafana"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                    f:subPath: {}
+                  k:{"mountPath":"/opt/bitnami/grafana/conf"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                    f:subPath: {}
+                  k:{"mountPath":"/opt/bitnami/grafana/data"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                  k:{"mountPath":"/opt/bitnami/grafana/tmp"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                    f:subPath: {}
+                  k:{"mountPath":"/tmp"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                    f:subPath: {}
+            f:dnsPolicy: {}
+            f:enableServiceLinks: {}
+            f:restartPolicy: {}
+            f:schedulerName: {}
+            f:securityContext:
+              .: {}
+              f:fsGroup: {}
+              f:fsGroupChangePolicy: {}
+            f:serviceAccount: {}
+            f:serviceAccountName: {}
+            f:terminationGracePeriodSeconds: {}
+            f:volumes:
+              .: {}
+              k:{"name":"data"}:
+                .: {}
+                f:name: {}
+                f:persistentVolumeClaim:
+                  .: {}
+                  f:claimName: {}
+              k:{"name":"empty-dir"}:
+                .: {}
+                f:emptyDir: {}
+                f:name: {}
+    manager: helm
+    operation: Update
+    subresource: null
+    time: '2024-12-15T08:13:53+00:00'
+  - api_version: apps/v1
+    fields_type: FieldsV1
+    fields_v1:
+      f:metadata:
+        f:annotations:
+          f:deployment.kubernetes.io/revision: {}
+      f:status:
+        f:availableReplicas: {}
+        f:conditions:
+          .: {}
+          k:{"type":"Available"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Progressing"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+        f:observedGeneration: {}
+        f:readyReplicas: {}
+        f:replicas: {}
+        f:updatedReplicas: {}
+    manager: kube-controller-manager
+    operation: Update
+    subresource: status
+    time: '2024-12-15T08:14:32+00:00'
+  name: my-grafana
+  namespace: monitoring
+  owner_references: null
+  resource_version: '211829'
+  self_link: null
+  uid: ffb7f445-2d2d-4f91-9e62-0cf33facaffe
+spec:
+  min_ready_seconds: null
+  paused: null
+  progress_deadline_seconds: 600
+  replicas: 1
+  revision_history_limit: 10
+  selector:
+    match_expressions: null
+    match_labels:
+      app.kubernetes.io/component: grafana
+      app.kubernetes.io/instance: my-grafana
+      app.kubernetes.io/name: grafana
+  strategy:
+    rolling_update:
+      max_surge: 25%
+      max_unavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        checksum/config: 545806c04f712a6646db7fabca54e6dab12189c030946befa9fc45006a7d94d7
+        checksum/dashboard-provider: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
+        checksum/secret: b5f8a837f9cbcadafd65001bba1ffb23e816e0b1191baf65b68ff91731f87ca4
+      creation_timestamp: null
+      deletion_grace_period_seconds: null
+      deletion_timestamp: null
+      finalizers: null
+      generate_name: null
+      generation: null
+      labels:
+        app.kubernetes.io/component: grafana
+        app.kubernetes.io/instance: my-grafana
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: grafana
+        app.kubernetes.io/version: 11.3.0
+        helm.sh/chart: grafana-11.4.0
+      managed_fields: null
+      name: null
+      namespace: null
+      owner_references: null
+      resource_version: null
+      self_link: null
+      uid: null
+    spec:
+      active_deadline_seconds: null
+      affinity:
+        node_affinity: null
+        pod_affinity: null
+        pod_anti_affinity:
+          preferred_during_scheduling_ignored_during_execution:
+          - pod_affinity_term:
+              label_selector:
+                match_expressions: null
+                match_labels:
+                  app.kubernetes.io/component: grafana
+                  app.kubernetes.io/instance: my-grafana
+                  app.kubernetes.io/name: grafana
+              match_label_keys: null
+              mismatch_label_keys: null
+              namespace_selector: null
+              namespaces: null
+              topology_key: kubernetes.io/hostname
+            weight: 1
+          required_during_scheduling_ignored_during_execution: null
+      automount_service_account_token: false
+      containers:
+      - args: null
+        command: null
+        env:
+        - name: GF_SECURITY_ADMIN_PASSWORD
+          value: null
+          value_from:
+            config_map_key_ref: null
+            field_ref: null
+            resource_field_ref: null
+            secret_key_ref:
+              key: GF_SECURITY_ADMIN_PASSWORD
+              name: my-grafana-admin
+              optional: null
+        env_from:
+        - config_map_ref:
+            name: my-grafana-envvars
+            optional: null
+          prefix: null
+          secret_ref: null
+        image: docker.io/bitnami/grafana:11.3.0-debian-12-r3
+        image_pull_policy: IfNotPresent
+        lifecycle: null
+        liveness_probe:
+          _exec: null
+          failure_threshold: 6
+          grpc: null
+          http_get: null
+          initial_delay_seconds: 120
+          period_seconds: 10
+          success_threshold: 1
+          tcp_socket:
+            host: null
+            port: dashboard
+          termination_grace_period_seconds: null
+          timeout_seconds: 5
+        name: grafana
+        ports:
+        - container_port: 3000
+          host_ip: null
+          host_port: null
+          name: dashboard
+          protocol: TCP
+        readiness_probe:
+          _exec: null
+          failure_threshold: 6
+          grpc: null
+          http_get:
+            host: null
+            http_headers: null
+            path: /api/health
+            port: dashboard
+            scheme: HTTP
+          initial_delay_seconds: 30
+          period_seconds: 10
+          success_threshold: 1
+          tcp_socket: null
+          termination_grace_period_seconds: null
+          timeout_seconds: 5
+        resize_policy: null
+        resources:
+          claims: null
+          limits:
+            cpu: 150m
+            ephemeral-storage: 2Gi
+            memory: 192Mi
+          requests:
+            cpu: 100m
+            ephemeral-storage: 50Mi
+            memory: 128Mi
+        restart_policy: null
+        security_context:
+          allow_privilege_escalation: false
+          app_armor_profile: null
+          capabilities:
+            add: null
+            drop:
+            - ALL
+          privileged: false
+          proc_mount: null
+          read_only_root_filesystem: true
+          run_as_group: 1001
+          run_as_non_root: true
+          run_as_user: 1001
+          se_linux_options:
+            level: null
+            role: null
+            type: null
+            user: null
+          seccomp_profile:
+            localhost_profile: null
+            type: RuntimeDefault
+          windows_options: null
+        startup_probe: null
+        stdin: null
+        stdin_once: null
+        termination_message_path: /dev/termination-log
+        termination_message_policy: File
+        tty: null
+        volume_devices: null
+        volume_mounts:
+        - mount_path: /tmp
+          mount_propagation: null
+          name: empty-dir
+          read_only: null
+          recursive_read_only: null
+          sub_path: tmp-dir
+          sub_path_expr: null
+        - mount_path: /opt/bitnami/grafana/conf
+          mount_propagation: null
+          name: empty-dir
+          read_only: null
+          recursive_read_only: null
+          sub_path: app-conf-dir
+          sub_path_expr: null
+        - mount_path: /opt/bitnami/grafana/tmp
+          mount_propagation: null
+          name: empty-dir
+          read_only: null
+          recursive_read_only: null
+          sub_path: app-tmp-dir
+          sub_path_expr: null
+        - mount_path: /bitnami/grafana
+          mount_propagation: null
+          name: empty-dir
+          read_only: null
+          recursive_read_only: null
+          sub_path: app-volume-dir
+          sub_path_expr: null
+        - mount_path: /opt/bitnami/grafana/data
+          mount_propagation: null
+          name: data
+          read_only: null
+          recursive_read_only: null
+          sub_path: null
+          sub_path_expr: null
+        working_dir: null
+      dns_config: null
+      dns_policy: ClusterFirst
+      enable_service_links: true
+      ephemeral_containers: null
+      host_aliases: null
+      host_ipc: null
+      host_network: null
+      host_pid: null
+      host_users: null
+      hostname: null
+      image_pull_secrets: null
+      init_containers: null
+      node_name: null
+      node_selector: null
+      os: null
+      overhead: null
+      preemption_policy: null
+      priority: null
+      priority_class_name: null
+      readiness_gates: null
+      resource_claims: null
+      restart_policy: Always
+      runtime_class_name: null
+      scheduler_name: default-scheduler
+      scheduling_gates: null
+      security_context:
+        app_armor_profile: null
+        fs_group: 1001
+        fs_group_change_policy: Always
+        run_as_group: null
+        run_as_non_root: null
+        run_as_user: null
+        se_linux_options: null
+        seccomp_profile: null
+        supplemental_groups: null
+        supplemental_groups_policy: null
+        sysctls: null
+        windows_options: null
+      service_account: my-grafana
+      service_account_name: my-grafana
+      set_hostname_as_fqdn: null
+      share_process_namespace: null
+      subdomain: null
+      termination_grace_period_seconds: 30
+      tolerations: null
+      topology_spread_constraints: null
+      volumes:
+      - aws_elastic_block_store: null
+        azure_disk: null
+        azure_file: null
+        cephfs: null
+        cinder: null
+        config_map: null
+        csi: null
+        downward_api: null
+        empty_dir:
+          medium: null
+          size_limit: null
+        ephemeral: null
+        fc: null
+        flex_volume: null
+        flocker: null
+        gce_persistent_disk: null
+        git_repo: null
+        glusterfs: null
+        host_path: null
+        image: null
+        iscsi: null
+        name: empty-dir
+        nfs: null
+        persistent_volume_claim: null
+        photon_persistent_disk: null
+        portworx_volume: null
+        projected: null
+        quobyte: null
+        rbd: null
+        scale_io: null
+        secret: null
+        storageos: null
+        vsphere_volume: null
+      - aws_elastic_block_store: null
+        azure_disk: null
+        azure_file: null
+        cephfs: null
+        cinder: null
+        config_map: null
+        csi: null
+        downward_api: null
+        empty_dir: null
+        ephemeral: null
+        fc: null
+        flex_volume: null
+        flocker: null
+        gce_persistent_disk: null
+        git_repo: null
+        glusterfs: null
+        host_path: null
+        image: null
+        iscsi: null
+        name: data
+        nfs: null
+        persistent_volume_claim:
+          claim_name: my-grafana
+          read_only: null
+        photon_persistent_disk: null
+        portworx_volume: null
+        projected: null
+        quobyte: null
+        rbd: null
+        scale_io: null
+        secret: null
+        storageos: null
+        vsphere_volume: null
+status:
+  available_replicas: 1
+  collision_count: null
+  conditions:
+  - last_transition_time: '2024-12-15T08:14:32+00:00'
+    last_update_time: '2024-12-15T08:14:32+00:00'
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: 'True'
+    type: Available
+  - last_transition_time: '2024-12-15T08:13:53+00:00'
+    last_update_time: '2024-12-15T08:14:32+00:00'
+    message: ReplicaSet "my-grafana-bb4cd45c6" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: 'True'
+    type: Progressing
+  observed_generation: 1
+  ready_replicas: 1
+  replicas: 1
+  unavailable_replicas: null
+  updated_replicas: 1
