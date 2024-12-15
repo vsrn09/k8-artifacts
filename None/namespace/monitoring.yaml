@@ -1,0 +1,36 @@
+api_version: v1
+kind: Namespace
+metadata:
+  annotations: null
+  creation_timestamp: '2024-12-15T07:14:32+00:00'
+  deletion_grace_period_seconds: null
+  deletion_timestamp: null
+  finalizers: null
+  generate_name: null
+  generation: null
+  labels:
+    kubernetes.io/metadata.name: monitoring
+  managed_fields:
+  - api_version: v1
+    fields_type: FieldsV1
+    fields_v1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:kubernetes.io/metadata.name: {}
+    manager: OpenAPI-Generator
+    operation: Update
+    subresource: null
+    time: '2024-12-15T07:14:32+00:00'
+  name: monitoring
+  namespace: null
+  owner_references: null
+  resource_version: '206849'
+  self_link: null
+  uid: f8d256b2-8c5b-459a-b6c6-04f4111df481
+spec:
+  finalizers:
+  - kubernetes
+status:
+  conditions: null
+  phase: Active
